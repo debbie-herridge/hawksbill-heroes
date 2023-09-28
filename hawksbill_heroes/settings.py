@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-debbieherri-hawksbillhe-piy4vta0h95.ws-eu104.gitpod.io',
+    '8000-debbieherri-hawksbillhe-piy4vta0h95.ws-eu105.gitpod.io',
     'https://hawksbill-heroes-7f765f18a538.herokuapp.com/',
 
     ]
@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+    'account',
 ]
 
 MIDDLEWARE = [
@@ -78,6 +79,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'hawksbill_heroes.wsgi.application'
 
@@ -115,6 +117,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+LOGIN_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = "home"
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/

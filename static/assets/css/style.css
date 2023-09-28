@@ -1,8 +1,20 @@
-/* nav bar background colour */
-.bg-dark {
-    background-color: #22806F;
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans&display=swap');
+
+body {
+    font-family: 'Sofia Sans', sans-serif;
 }
 
-h1{
-    color: red;
+/* nav bar background colour */
+.bg-dark {
+    background-color: #417e6f !important;
+}
+
+.nav-link {
+    font-size: 1.5em;
+}
+
+.carousel-inner {
+    border-top: black 6px solid;
+    border-bottom: black 6px solid;
 }
