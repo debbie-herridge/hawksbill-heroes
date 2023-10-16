@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <h2>User profile</h2>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>{{ user.username }}</p>
+        </div>
+        <div class="col">
+            <a>Update username</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>{{ user.email }}</p>
+        </div>
+        <div class="col">
+            <a>Update email</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>Total donations:</p>
+        </div>
+        <div class="col">
+            <a>X</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>Helping the turtles since:</p>
+        </div>
+        <div class="col">
+            <a>{{ profile.date_created }}</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h2>Adopted animal</h2>
+</div>
+
+<div class="container">
+    <h2>Recent orders</h2>
+</div>
+{% endblock %}

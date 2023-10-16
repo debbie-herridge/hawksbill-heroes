@@ -4,6 +4,3 @@ from django.shortcuts import render
 def home(request):
     return render(request, 'index.html')
 
-def turtles(request):
-    return render(request, 'turtles.html')
-

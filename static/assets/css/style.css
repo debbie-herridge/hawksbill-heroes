@@ -5,6 +5,10 @@ body {
     font-family: 'Sofia Sans', sans-serif;
 }
 
+h2 {
+    padding-top: 20px;
+}
+
 /* nav bar background colour */
 .bg-dark {
     background-color: #417e6f !important;
@@ -18,3 +22,4 @@ body {
     border-top: black 6px solid;
     border-bottom: black 6px solid;
 }
+
