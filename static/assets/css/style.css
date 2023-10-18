@@ -16,6 +16,11 @@ h2 {
     text-align: center;
 }
 
+h3 {
+    margin:1em;
+    text-align: center;
+}
+
 /* nav bar background colour */
 .bg-dark {
     background-color: #417e6f !important;
@@ -60,4 +65,11 @@ footer {
 /* NOT WORKING */
 .add-turtle-input {
     width:60%;
+}
+
+.dashboard {
+    border: black 3px solid;
+    border-radius: 5px;
+    margin-bottom: 2em;
+    text-align: center;
 }

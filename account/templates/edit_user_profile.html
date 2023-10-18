@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="mx-auto">
+        <h1 class="login-header">Update your details:</h1>
+        <form class="col-md-12 section-column text-center" method="POST">
+            {% csrf_token %}
+            <div>
+                <div class="mb-5">
+                    {{form.first_name}}
+                </div>
+                <div class="mb-5">
+                    {{form.last_name}}
+                </div>
+                <div class="mb-5">
+                    {{form.username}}
+                </div>
+                <div class="mb-5">
+                    {{form.email}}
+                </div>
+                <button type="submit" class="btn btn-dark">Update details!</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

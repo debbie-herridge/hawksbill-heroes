@@ -1,49 +1,42 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
-<div class="container">
-    <div class="row">
-        <h2>User profile</h2>
-    </div>
-    <div class="row">
-        <div class="col">
-            <p>{{ user.username }}</p>
-        </div>
-        <div class="col">
-            <a>Update username</a>
-        </div>
-    </div>
+
+<h2 class="text-uppercase">Welcome back {{ user.username }}!</h2>
+
+<div class="container dashboard">
     <div class="row">
         <div class="col">
-            <p>{{ user.email }}</p>
+            <div>
+                <h3>Your details...</h3>
+            </div>
+            <div>
+                <h5>Username: {{ profile.username }}</h5>
+                <h5>First name: {{ profile.first_name }}</h5>
+                <h5>Last name: {{ profile.last_name }}</h5>
+                <h5>Email: {{ profile.email }}</h5>
+                <div>
+                    <h5>Total donations: X</h5>
+                </div>
+                <h5>Helping the turtles since: {{ profile.date_created }}</h5>
+            </div>
+            <div class="mt-4">
+                <a href="{% url 'edit_profile' %}" class="btn btn-dark text-uppercase">Update details</a>
+                <a href="" class="btn btn-dark text-uppercase">Make donation!</a>
+            </div>
         </div>
-        <div class="col">
-            <a>Update email</a>
+        <div class="col p-0">
+            <img class="w-100 h-100" src="{% static '/assets/images/hawksbil-turtle-swimming-side.jpeg' %}" alt="home screen image of hawksbill turtle swimming">
         </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <p>Total donations:</p>
-        </div>
-        <div class="col">
-            <a>X</a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <p>Helping the turtles since:</p>
-        </div>
-        <div class="col">
-            <a>{{ profile.date_created }}</a>
-        </div>
-    </div>
+    </div> 
 </div>
 
-<div class="container">
-    <h2>Adopted animal</h2>
+<div class="container dashboard">
+    <h3>Adopted animal:</h3>
 </div>
 
-<div class="container">
-    <h2>Recent orders</h2>
+<div class="container dashboard">
+    <h3>Recent orders:</h3>
 </div>
+
 {% endblock %}
