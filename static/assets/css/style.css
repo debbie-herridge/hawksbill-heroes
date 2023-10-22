@@ -3,7 +3,10 @@
 
 body {
     font-family: 'Sofia Sans', sans-serif;
-    background-color: antiquewhite;
+    background-color: #FFFCF1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
@@ -22,24 +25,29 @@ h3 {
 }
 
 /* nav bar background colour */
-.bg-dark {
-    background-color: #417e6f !important;
+.navbar {
+    background-color: #5F9EA0 !important;
 }
 
 .nav-link {
     font-size: 1.5em;
 }
 
-.carousel-inner {
-    border-top: black 3px solid;
-    border-bottom: black 3px solid;
+.navbar-brand {
+    padding-left: 10px;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
 }
 
 footer {
     width: 100%;
-    background-color: #417e6f;
-    border-top: black 3px solid;
+    background-color: #5F9EA0;
+    margin-top: auto;
+    padding: 3rem !important;
 }
+
 
 /* footer email address background */
 .form-control {
@@ -49,13 +57,14 @@ footer {
 
 .add-turtle-container {
     width:100%;
-    background-color: #DEB887;
+    background-color: #8FBC8F;
+    border-top: black 2px solid;
+    border-bottom: black 2px solid;
 }
 
 .add-turtle-form {
     padding: 1.5em;
     padding-bottom: 3em;
-    margin-top: 3em;
 }
 
 .add-turtle {
@@ -68,7 +77,7 @@ footer {
 }
 
 .dashboard {
-    border: black 3px solid;
+    border: black 2px solid;
     border-radius: 5px;
     margin-bottom: 2em;
     text-align: center;

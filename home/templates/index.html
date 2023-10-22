@@ -4,16 +4,9 @@
 {% block content %}
 
 <!-- image carousel -->
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="d-block w-100" src="{% static '/assets/images/hawksbill-turtle-swimming.jpeg' %}" alt="First slide of hawksbill turtle swimming face on">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="{% static '/assets/images/hawksbil-turtle-swimming-side.jpeg' %}" alt="Second slide  of hawksbill turtle swimming side on">
-      </div>
-    </div>
-  </div>
+<div>
+    <img class="w-100" src="{% static '/assets/images/turtle-swimming-home-far.jpg' %}" alt="Image of hawksbill turtle swimming far away">
+</div>
 
   <!-- website home information -->
 <div class="container">
@@ -49,20 +42,20 @@
             Affliated sites
         </h1>
     </div>
-    <div class="row">
+    <div class="row mb-5">
         <div class="col">
             <a href="https://www.worldwildlife.org/species/hawksbill-turtle" rel="noopener" target="_blank">
-                <img src="{% static '/assets/images/wwf-logo.jpg' %}" width="300" height="300" alt="WWF World wildlife fund logo">
+                <img src="{% static '/assets/images/wwf-logo.jpg' %}" width="250" height="250" alt="WWF World wildlife fund logo">
             </a>
         </div>
         <div class="col">
             <a href="https://www.hihawksbills.org/" rel="noopener" target="_blank">
-                <img src="{% static '/assets/images/hihawksbill-logo.jpg' %}" width="300" height="300" alt="HiHawksbill org logo">
+                <img src="{% static '/assets/images/hihawksbill-logo.jpg' %}" width="250" height="250" alt="HiHawksbill org logo">
             </a>
         </div>
         <div class="col">
             <a href="https://www.fisheries.noaa.gov/species/hawksbill-turtle" rel="noopener" target="_blank">
-                <img src="{% static '/assets/images/noaa-logo.jpg' %}" width="300" height="300" alt="NOAA National Oceanic and Atmospheric Administration logo">
+                <img src="{% static '/assets/images/noaa-logo.jpg' %}" width="250" height="250" alt="NOAA National Oceanic and Atmospheric Administration logo">
             </a>
         </div>
     </div>

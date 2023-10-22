@@ -5,15 +5,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/images/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/images/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/favicon-16x16.png' %}">
+    <link rel="manifest" href="/site.webmanifest">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}"> 
     <title>Hawksbill Heroes</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" href="{% url 'home' %}">
-            <img src="{% static 'assets/images/hawksbill-heroes-nav-logo.jpg' %}" width="400" height="80" alt="hawksbill heroes logo">
+            <img src="{% static 'assets/images/hawksbill-heroes-nav-logo.jpg' %}" width="110" height="100" alt="hawksbill heroes logo">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -21,24 +25,24 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'turtles' %}">Turtles</a>
+              <a class="nav-link text-uppercase" href="{% url 'turtles' %}">Turtles</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Donate</a>
+              <a class="nav-link text-uppercase" href="{% url 'donate' %}">Donate</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Merchandise</a>
+              <a class="nav-link text-uppercase" href="#">Merchandise</a>
             </li>
             <li class="nav-item">
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
+                  <a class="nav-link text-uppercase" href="{% url 'dashboard' %}">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+                  <a class="nav-link text-uppercase" href="{% url 'logout' %}">Log Out</a>
                 </li>
                 {% else %}
-                  <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                  <a class="nav-link text-uppercase" href="{% url 'login' %}">Log In</a>
                 {% endif %}
             </li>
           </ul>
@@ -53,14 +57,14 @@
     <footer class="py-5">
       <div class="row">
         <div class="col-4">
-          <h5>Social media</h5>
+          <h4>Social media</h4>
           <ul class="nav flex-column">
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Facebook</a></li>
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Instagram</a></li>
           </ul>
         </div>
         <div class="col-3">
-            <h5>GDPR</h5>
+            <h4>GDPR</h4>
             <ul class="nav flex-column">
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Privacy Policy</a></li>
             </ul>
@@ -68,7 +72,7 @@
   
         <div class="col-4 offset-1">
           <form>
-            <h5>Subscribe to our newsletter</h5>
+            <h4>Subscribe to our newsletter</h4>
             <p>Monthly digest of whats new and exciting from us.</p>
             <div class="d-flex w-100 gap-2">
               <label for="newsletter1" class="visually-hidden">Email address</label>

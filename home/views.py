@@ -4,3 +4,5 @@ from django.shortcuts import render
 def home(request):
     return render(request, 'index.html')
 
+def donate(request):
+    return render(request, 'donate.html')
