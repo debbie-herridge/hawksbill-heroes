@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'home',
     'account',
     'turtles',
+    'merchandise',
 ]
 
 MIDDLEWARE = [

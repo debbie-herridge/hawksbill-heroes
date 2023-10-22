@@ -2,45 +2,47 @@
 
 {% block content %}
 
-<div class="container mx-auto">
-    <form class="col-md-16 section-column text-center" method="POST">
-    <h1 class="login-header">Sign up!</h1>
-        {% csrf_token %}
-        <div>
-        <div>
-            <input class="form-control mb-2" type="text" name="first_name" placeholder="First Name">
-        </div>
-        <div>
-            <input class="form-control mb-2" type="text" name="last_name" placeholder="Last Name">
-        </div>
-        <div>
-            <input class="form-control mb-2" type="text" name="username" placeholder="Username">
-        </div>
-        <div>
-            <input class="form-control mb-2" type="email" name="email" placeholder="Email">
-        </div>
-        <div>
-            <input class="form-control mb-2" type="password" name="password1" placeholder="Password">
-        </div>
-        <div>
-            <input class="form-control mb-2" type="password" name="password2" placeholder="Password Confirmation">
-        </div>
-        <details class="text-dark">
-            <summary>
-                Password criteria
-                <span class="icon"></span>
-            </summary>
-                <p>Your password can’t be too similar to your other personal information.</p>
-                <p>Your password must contain at least 8 characters.</p>
-                <p>Your password can’t be a commonly used password.</p>
-                <p>Your password can’t be entirely numeric.</p>
-        </details>
-        <div>
-            <a href="{% url 'login' %}">Already have an account?</a>
-        </div>
-            <button type="submit" class="btn btn-dark mt-4">Sign up!</button>
-        </div>
-    </form>
+<div class="turtle-background">   
+    <div class="container container-account mx-auto">
+        <form class="col-md-16 section-column text-center" method="POST">
+        <h1 class="login-header">Sign up!</h1>
+            {% csrf_token %}
+            <div>
+            <div>
+                <input class="form-control mb-2" type="text" name="first_name" placeholder="First Name">
+            </div>
+            <div>
+                <input class="form-control mb-2" type="text" name="last_name" placeholder="Last Name">
+            </div>
+            <div>
+                <input class="form-control mb-2" type="text" name="username" placeholder="Username">
+            </div>
+            <div>
+                <input class="form-control mb-2" type="email" name="email" placeholder="Email">
+            </div>
+            <div>
+                <input class="form-control mb-2" type="password" name="password1" placeholder="Password">
+            </div>
+            <div>
+                <input class="form-control mb-2" type="password" name="password2" placeholder="Password Confirmation">
+            </div>
+            <details class="text-dark">
+                <summary>
+                    Password criteria
+                    <span class="icon"></span>
+                </summary>
+                    <p>Your password can’t be too similar to your other personal information.</p>
+                    <p>Your password must contain at least 8 characters.</p>
+                    <p>Your password can’t be a commonly used password.</p>
+                    <p>Your password can’t be entirely numeric.</p>
+            </details>
+            <div>
+                <a href="{% url 'login' %}">Already have an account?</a>
+            </div>
+                <button type="submit" class="btn btn-dark mt-4">Sign up!</button>
+            </div>
+        </form>
+    </div>
 </div>
 
 
