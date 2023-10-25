@@ -5,13 +5,13 @@
 <h2 class="text-uppercase">Meet the turtles: </h2>
 <div class="container-fluid">
     <div class="row mb-3">
-	{% for i in turtle %}
+	{% for turtles in turtle %}
         <div class="col-sm-6 h-100 border-0">
             <a href="">
-                <img class="card-img-top img-fluid dashboard m-0" src="{{ i.image.url }}" alt="{{ i.name }}">
+                <img class="card-img-top img-fluid dashboard m-0" src="{{ turtles.image.url }}" alt="{{ turtles.name }}">
             </a>
-            <h2 class="card-body pb-0 mb-0 text-uppercase">{{i.name}}</h2>
-            <p class="card-body pb-0 mb-5 text-center">{{ i.description }}</p>
+            <h2 class="card-body pb-0 mb-0 text-uppercase">{{ turtles.name }}</h2>
+            <p class="card-body pb-0 mb-5 text-center">{{ turtles.description }}</p>
         </div>
     {% endfor %} 
     </div>
@@ -27,19 +27,19 @@
                     <div class="col add-turtle d-flex justify-content-center">
                         <label">Name: </label>
                     </div>
-                    <div class="col">{{add_turtle.name}}</div>
+                    <div class="col">{{turtle_form.name}}</div>
                 </div>
                 <div class="row">
                     <div class="col add-turtle d-flex justify-content-center">
                         <label">Image upload: </label>
                     </div>
-                    <div class="col">{{add_turtle.image}}</div>
+                    <div class="col">{{turtle_form.image}}</div>
                 </div>
                 <div class="row">
                     <div class="col add-turtle d-flex justify-content-center">
                         <label">Turtle description: </label>
                     </div>
-                    <div class="col">{{add_turtle.description}}</div>
+                    <div class="col">{{turtle_form.description}}</div>
                 </div>
                 <div class="row">
                     <div class="col d-flex justify-content-center">

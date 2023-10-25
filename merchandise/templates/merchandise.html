@@ -2,17 +2,19 @@
 
 {% block content %}
 
+
 <div class="container-fluid">
+    <h1>Buy our merchandise: </h1>
     <div class="row mb-3">
-	<!-- {% for i in turtle %} -->
+	{% for products in product %}
         <div class="col-sm-4 h-100 border-0">
             <a href="">
-                <img class="card-img-top img-fluid dashboard m-0" src="" alt="">
+                <img class="card-img-top img-fluid dashboard m-0" src="{{ products.image.url }}" alt="{{ products.name }}">
             </a>
-            <h2 class="card-body pb-0 mb-0 text-uppercase"></h2>
-            <p class="card-body pb-0 mb-5 text-center"></p>
+            <h2 class="card-body pb-0 mb-0 text-uppercase">{{ products.name }}</h2>
+            <p class="card-body pb-0 mb-5 text-center">{{ products.price }}</p>
         </div>
-    <!-- {% endfor %}  -->
+    {% endfor %} 
     </div>
 </div>
 

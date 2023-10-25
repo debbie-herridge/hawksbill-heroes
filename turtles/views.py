@@ -1,24 +1,24 @@
 from django.shortcuts import render
 from django.contrib import messages
-from .forms import AddTurtle
-from .models import Turtles
+from .forms import TurtleForm
+from .models import Turtle
 
 def turtles(request):
-    turtle = Turtles.objects.all()
-    add_turtle = AddTurtle()
+    turtle = Turtle.objects.all()
+    turtle_form = TurtleForm()
 
     if request.method == "POST":
-        add_turtle = AddTurtle(request.POST)
-        if add_turtle.is_valid():
-            add_turtle.save()
+        turtle_form = TurtleForm(request.POST)
+        if turtle_form.is_valid():
+            turtle_form.save()
             messages.success(request, 'One more turtle added to the family.')
-            return render
+            return render(request, 'turtles.html',{'turtle':turtle})
         else:
             messages.error(request, 'Error saving form. Please refresh and try again.')
-            return render
+            return render(request, 'turtles.html',{'turtle':turtle})
     
     context={
 	'turtle':turtle,
-    'add_turtle':add_turtle,
+    'turtle_form':turtle_form,
     }
     return render(request, 'turtles.html', context)

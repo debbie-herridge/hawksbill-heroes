@@ -1,7 +1,7 @@
 from django.forms import ModelForm
-from .models import Turtles
+from .models import Turtle
 
-class AddTurtle(ModelForm):
+class TurtleForm(ModelForm):
     class Meta:
-       model = Turtles
+       model = Turtle
        fields = ('name','image','description')

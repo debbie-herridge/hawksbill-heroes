@@ -1,5 +1,10 @@
 from django.shortcuts import render
+from .models import Product
 
 # Create your views here.
 def merchandise(request):
-    return render(request, 'merchandise.html')
+    product = Product.objects.all()
+    context = {
+        'product': product,
+    }
+    return render(request, 'merchandise.html', context)

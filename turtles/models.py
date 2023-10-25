@@ -2,7 +2,7 @@ from django.db import models
 from account.models import Profile
 
 # Model for all turtles
-class Turtles(models.Model):
+class Turtle(models.Model):
     name = models.CharField(max_length=50)
     image = models.FileField(upload_to='turtles')
     description = models.TextField()
