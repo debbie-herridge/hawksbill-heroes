@@ -8,13 +8,14 @@ def turtles(request):
     turtle_form = TurtleForm()
 
     if request.method == "POST":
-        turtle_form = TurtleForm(request.POST)
+        turtle_form = TurtleForm(request.POST, request.FILES)
         if turtle_form.is_valid():
             turtle_form.save()
-            messages.success(request, 'One more turtle added to the family.')
+            messages.success(request, 'One more turtle added to the family!')
             return render(request, 'turtles.html',{'turtle':turtle})
         else:
-            messages.error(request, 'Error saving form. Please refresh and try again.')
+            messages.error(request, 'Error saving form, please refresh and try again.')
+            print (turtle_form.errors)
             return render(request, 'turtles.html',{'turtle':turtle})
     
     context={

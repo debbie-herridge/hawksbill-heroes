@@ -4,4 +4,4 @@ from .models import Turtle
 class TurtleForm(ModelForm):
     class Meta:
        model = Turtle
-       fields = ('name','image','description')
+       fields = ['name','image','description']
