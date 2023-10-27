@@ -1,19 +1,31 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import generic
 from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
-from .forms import EditUserProfile
+from .forms import EditUserProfile, CreateUserForm
 from django.views import generic
-
 from .models import * 
-# Create your views here.
 
 # Sign up form
 class SignUp(generic.CreateView):
-    form_class = UserCreationForm
+    form_class = CreateUserForm
     success_url = reverse_lazy('login')
     template_name = 'signup.html'
 
+    def form_valid(self, form):
+        # Save the user object first
+        user = form.save()
+        
+        # Create a Profile object linked to the user
+        profile = Profile.objects.create(
+            user=user,
+            username=user.username,
+            first_name=user.first_name,
+            last_name=user.last_name,
+            email=user.email,
+        )
+        
+        return redirect(self.success_url)
 
 def dashboard(request):
     profile = Profile.objects.all()
@@ -29,4 +41,3 @@ class EditUser(generic.UpdateView):
 
     def get_object(self):
         return self.request.user
-

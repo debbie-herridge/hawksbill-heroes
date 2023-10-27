@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth.forms import User
+from .models import Profile
 
 class CreateUserForm(UserCreationForm):
     class Meta: 
@@ -14,5 +15,5 @@ class EditUserProfile(UserChangeForm):
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class':'form-control', 'placeholder':'Update your email address'}))
 
     class Meta:
-        model = User
-        fields = ['username', 'email']
+        model = Profile
+        fields = ['first_name', 'last_name', 'username','email']

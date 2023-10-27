@@ -8,12 +8,12 @@
             <h3>Your details...</h3>
         </div>
         <div class="ps-5">
-            <h5>Username: {{ profile.username }}</h5>
-            <h5>First name: {{ profile.first_name }}</h5>
-            <h5>Last name: {{ profile.last_name }}</h5>
-            <h5>Email: {{ profile.email }}</h5>
-            <h5>Total donations: </h5>
-            <h5>Helping the turtles since: {{ profile.date_created }}</h5>
+            <h5><strong>Username:</strong> {{ user.profile.username }}</h5>
+            <h5><strong>First name:</strong> {{ user.profile.first_name }}</h5>
+            <h5><strong>Last name:</strong> {{ user.profile.last_name }}</h5>
+            <h5><strong>Email:</strong> {{ user.profile.email }}</h5>
+            <h5><strong>Total donations:</strong> </h5>
+            <h5><strong>Helping the turtles since:</strong> {{ user.profile.date_created }}</h5>
         </div>
         <div class="mt-4 d-flex justify-content-center">
             <a href="{% url 'edit_profile' %}" class="btn btn-dark text-uppercase">Update details</a>

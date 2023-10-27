@@ -128,3 +128,8 @@ footer {
     height: 800px;
     padding: 3em 6em;
 }
+
+strong {
+    text-transform: uppercase;
+    font-weight: bolder;
+}
