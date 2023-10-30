@@ -1,0 +1,29 @@
+{% extends "base.html"  %}
+{% load static %}
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="pb-0 mb-0 text-uppercase">{{ turtle.name }}</h1>
+        </div>
+    </div>
+    <div class="row mb-3 pt-5"> 
+        <div class="col-6">
+            <img class="card-img-top dashboard" src="{{ turtle.image.url }}" alt="{{ turtle.name }}">
+        </div>
+        <div class="col-5">
+            <h4 class="pb-0 mb-5"><strong> Weight: </strong>{{ turtle.weight }}</h4>
+            <h4 class="pb-0 mb-5"><strong> Age: </strong>{{ turtle.age }}</h4>
+            <h4 class="pb-0 mb-5"><strong> Size: </strong>{{ turtle.size }}</h4>
+            <h4 class="pb-0 mb-5"><strong> Discovery Date: </strong>{{ turtle.discovery_date }}</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <p class="pb-0 mb-5 text-center">{{ turtle.description }}</p>
+        </div>
+    </div>
+</div>
+
+{%endblock%}

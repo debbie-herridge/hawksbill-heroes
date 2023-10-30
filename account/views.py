@@ -19,7 +19,7 @@ class SignUp(generic.CreateView):
 
     def form_valid(self, form):
         # Save the user object first
-        form.save()
+        user = form.save()
         
         return redirect('login')
 
@@ -38,7 +38,7 @@ class EditUser(generic.UpdateView):
     success_url = reverse_lazy('dashboard')
 
     def get_object(self):
-        return self.request.user
+        return self.request.user.profile
 
 class UserDeleteView(LoginRequiredMixin, View):
     """

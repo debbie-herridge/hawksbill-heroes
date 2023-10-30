@@ -6,14 +6,14 @@
 <h4 class="text-center"> Click to view more details and adopt! </h4>
 <div class="container-fluid">
     <div class="row mb-3">
-	{% for turtles in turtle %}
+	{% for turtle in turtles %}
         <div class="col-sm-6 h-100 border-0">
-            <a href="">
-                <img class="card-img-top dashboard m-0" src="{{ turtles.image.url }}" alt="{{ turtles.name }}">
+            <a href="{% url 'turtle_details' turtle.id %}">
+                <img class="card-img-top dashboard m-0" src="{{ turtle.image.url }}" alt="{{ turtle.name }}">
             </a>
             <div>
-                <h2 class="pb-0 mb-0 text-uppercase">{{ turtles.name }}</h2>
-                <p class="pb-0 mb-5 text-center">{{ turtles.description }}</p>
+                <h2 class="pb-0 mb-0 text-uppercase">{{ turtle.name }}</h2>
+                <p class="pb-0 mb-5 text-center">{{ turtle.description }}</p>
             </div>
         </div>
     {% endfor %} 
@@ -52,6 +52,30 @@
                             <label">Turtle description: </label>
                         </div>
                         <div class="col">{{turtle_form.description}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col add-turtle d-flex justify-content-center">
+                            <label">Turtle weight: </label>
+                        </div>
+                        <div class="col">{{turtle_form.weight}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col add-turtle d-flex justify-content-center">
+                            <label">Turtle age: </label>
+                        </div>
+                        <div class="col">{{turtle_form.age}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col add-turtle d-flex justify-content-center">
+                            <label">Turtle size: </label>
+                        </div>
+                        <div class="col">{{turtle_form.size}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col add-turtle d-flex justify-content-center">
+                            <label">Turtle discovery date: </label>
+                        </div>
+                        <div class="col">{{turtle_form.discovery_date}}</div>
                     </div>
                     <div class="row">
                         <div class="col d-flex justify-content-center">

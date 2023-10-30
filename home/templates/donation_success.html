@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h1>Thank you for your donation of £{{amount}}!</h1>
+    <p> 
+        Your support means the world to us and makes a significant difference to saving the Hawksbill Turtles.
+        Your kindness and generosity enable us to continue our vital work, and we are deeply grateful for your contribution.
+        It's people like you who make it possible for us to strive towards our mission and create positive change in the world. 
+        Your compassion and generosity are truly inspiring, and we feel blessed to have you as part of our community.
+        Once again, thank you for your selflessness and commitment to making the world a better place. 
+        We couldn't do it without you.
+    </p>
+    <hr>
+    <a class="btn btn-dark" href="{% url 'merchandise' %}">Go view our Merchandise!</a>
+    <a class="btn btn-dark" href="{% url 'turtles' %}">See our turtles!</a>
+</div>
+
+{% endblock %}
