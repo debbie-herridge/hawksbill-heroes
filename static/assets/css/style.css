@@ -133,3 +133,7 @@ strong {
     text-transform: uppercase;
     font-weight: bolder;
 }
+
+.text-colour {
+    color: antiquewhite;
+}

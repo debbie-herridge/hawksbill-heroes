@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'home',
-    'account',
+    'account.apps.AccountConfig',
     'turtles',
     'merchandise',
 ]
