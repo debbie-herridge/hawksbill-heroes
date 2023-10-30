@@ -1,4 +1,5 @@
 from django import forms
+from django.forms import ModelForm
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth.forms import User
 from .models import Profile
@@ -15,7 +16,7 @@ class EditUserProfile(UserChangeForm):
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class':'form-control', 'placeholder':'Update your email address'}))
 
     class Meta:
-        model = Profile
+        model = User
         fields = ['first_name', 'last_name', 'username','email']
 
 class UserDeleteForm(forms.Form):
@@ -23,3 +24,8 @@ class UserDeleteForm(forms.Form):
     Simple form that provides a checkbox that signals deletion.
     """
     delete = forms.BooleanField(required=True)
+
+class ProfilePictureForm(ModelForm):
+    class Meta:
+        model = Profile
+        fields = ["profile_picture"]

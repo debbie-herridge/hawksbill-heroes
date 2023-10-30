@@ -81,14 +81,15 @@ footer {
 
 #dashboard-background {
     background-image: url("/static/assets/images/turtle-swimming-birdseye.jpg");
+    width: 100vw;
     margin: 0;
-    height: 550px;
+    height: auto;
     overflow: hidden;
     background-size:cover;
     background-position: center;
 }
 
-#dashboard-details {
+.dashboard-details {
     padding: 10px;
     margin: 40px;
     background: rgb(255, 252, 241, 0.6);
@@ -136,4 +137,9 @@ strong {
 
 .text-colour {
     color: antiquewhite;
+}
+
+.profile-picture {
+    margin: 0;
+    max-width: 100%;
 }

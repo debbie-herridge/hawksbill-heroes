@@ -4,6 +4,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import logout
+from django.contrib.auth.models import User
 from django.contrib import messages
 from django.views.generic import View
 from .forms import *
@@ -23,8 +24,6 @@ class SignUp(generic.CreateView):
         
         return redirect('login')
 
-
-
 def dashboard(request):
     profile = Profile.objects.all()
     context = {
@@ -38,7 +37,7 @@ class EditUser(generic.UpdateView):
     success_url = reverse_lazy('dashboard')
 
     def get_object(self):
-        return self.request.user.profile
+        return self.request.user
 
 class UserDeleteView(LoginRequiredMixin, View):
     """
@@ -63,3 +62,6 @@ class UserDeleteView(LoginRequiredMixin, View):
 
 def userDeleted(request):
     return render(request, 'delete-confirmation.html')
+
+# class UpdateProfilePicture(generic.UpdateView):
+#     form

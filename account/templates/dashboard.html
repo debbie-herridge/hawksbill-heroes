@@ -2,40 +2,51 @@
 {% load static %}
 {% block content %}
 
-<div class="row" id="dashboard-background">
-    <div class="col-10 col-sm-6 col-lg-4" id="dashboard-details">
+<div class="row mx-auto" id="dashboard-background">
+    <div class="col-10 col-sm-6 col-lg-3 dashboard-details">
+        <div class="w-100">
+            {% if user.profile.profile_picture.url is not none %}
+                <img class="profile-picture" src="{{ user.profile.profile_picture.url }}" alt="User profile picture">
+            {% else %}
+                <img class="profile-picture" src="/static/assets/images/default.jpg" alt="Image of default profile picture">
+            {% endif %}
+        </div>
+    </div>
+    <div class="col-10 col-sm-6 col-lg-7 dashboard-details">
         <div>
             <h3>Your details...</h3>
         </div>
         <div class="ps-5">
-            <h5><strong>Username:</strong> {{ user.profile.username }}</h5>
-            <h5><strong>First name:</strong> {{ user.profile.first_name }}</h5>
-            <h5><strong>Last name:</strong> {{ user.profile.last_name }}</h5>
-            <h5><strong>Email:</strong> {{ user.profile.email }}</h5>
+            
+            <h5><strong>First name:</strong> {{ request.user.first_name }}</h5>
+            <h5><strong>Last name:</strong> {{ request.user.last_name }}</h5>
+            <hr>
+            <h5><strong>Username:</strong> {{ request.user.username }}</h5>
+            <h5><strong>Email:</strong> {{ request.user.email }}</h5>
+            <hr>
+            <h5><strong>Helping the turtles since:</strong> {{request.user.date_joined }}</h5>
+            <hr>
             <h5><strong>Total donations:</strong> </h5>
-            <h5><strong>Helping the turtles since:</strong> {{ user.profile.date_created }}</h5>
+
         </div>
         <div class="mt-4 d-flex justify-content-center">
-            <a href="{% url 'edit_profile' %}" class="btn btn-dark text-uppercase">Update details</a>
-        </div>
-        <div class="mt-2 d-flex justify-content-center">
-            <a href="{% url 'password_reset' %}" class="btn btn-dark text-uppercase">Change password</a>
-        </div>
-        <div class="mt-2 d-flex justify-content-center">
-            <a href="{% url 'donate' %}" class="btn btn-dark text-uppercase">Make donation!</a>
-        </div>
-        <div class="mt-2 d-flex justify-content-center">
-            <a href="{% url 'delete' %}" class="btn btn-dark text-uppercase">Delete account</a>
+            <a href="{% url 'edit_profile' %}" class="btn btn-dark text-uppercase m-2">Update details</a>
+            <a href="{% url 'password_reset' %}" class="btn btn-dark text-uppercase m-2">Change password</a>
+            <a href="" class="btn btn-dark text-uppercase m-2">Change profile picture</a>
+            <a href="{% url 'delete' %}" class="btn btn-dark text-uppercase m-2">Delete account</a>
         </div>
     </div>
-</div>
 
-<div class="container dashboard mt-4">
-    <h3>Adopted animal:</h3>
-</div>
-
-<div class="container dashboard">
-    <h3>Recent orders:</h3>
+        <div class="row">
+        <div class="col-11 dashboard-details">
+            <h3>Adopted animal:</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-11 dashboard-details">
+            <h3>Recent orders:</h3>
+        </div>
+    </div>
 </div>
 
 {% endblock %}
