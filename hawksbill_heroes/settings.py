@@ -34,7 +34,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-debbieherri-hawksbillhe-piy4vta0h95.ws-eu105.gitpod.io',
+    '8000-debbieherri-hawksbillhe-grrhi8h3as6.ws-eu105.gitpod.io',
     'https://hawksbill-heroes-7f765f18a538.herokuapp.com/',
 
     ]

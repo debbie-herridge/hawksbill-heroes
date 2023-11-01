@@ -2,17 +2,16 @@
 {% load static %}
 {% block content %}
 
+
 <div class="row mx-auto" id="dashboard-background">
-    <div class="col-10 col-sm-6 col-lg-3 dashboard-details">
-        <div class="w-100">
-            {% if user.profile.profile_picture.url is not none %}
-                <img class="profile-picture" src="{{ user.profile.profile_picture.url }}" alt="User profile picture">
-            {% else %}
-                <img class="profile-picture" src="/static/assets/images/default.jpg" alt="Image of default profile picture">
-            {% endif %}
-        </div>
+    <div class="col-10 col-lg-3 dashboard-details">
+        {% if user.profile.profile_picture.url is not none %}
+            <img class="profile-picture" src="{{ user.profile.profile_picture.url }}" alt="User profile picture">
+        {% else %}
+            <img class="profile-picture" src="/static/assets/images/default.jpg" alt="Image of default profile picture">
+        {% endif %}
     </div>
-    <div class="col-10 col-sm-6 col-lg-7 dashboard-details">
+    <div class="col-10 col-lg-7 dashboard-details">
         <div>
             <h3>Your details...</h3>
         </div>
@@ -32,10 +31,11 @@
         <div class="mt-4 d-flex justify-content-center">
             <a href="{% url 'edit_profile' %}" class="btn btn-dark text-uppercase m-2">Update details</a>
             <a href="{% url 'password_reset' %}" class="btn btn-dark text-uppercase m-2">Change password</a>
-            <a href="" class="btn btn-dark text-uppercase m-2">Change profile picture</a>
+            <a href="{% url 'update_picture' %}" class="btn btn-dark text-uppercase m-2">Change profile picture</a>
             <a href="{% url 'delete' %}" class="btn btn-dark text-uppercase m-2">Delete account</a>
         </div>
     </div>
+
 
         <div class="row">
         <div class="col-11 dashboard-details">

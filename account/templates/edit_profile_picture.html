@@ -4,6 +4,20 @@
 
 <div class="turtle-background">
     <div class="mx-auto container container-account">
+        <div class="dashboard-details">
+            <h1>Current photo:</h1>
+            {% if user.profile.profile_picture.url is not none %}
+                <img class="profile-picture" src="{{ user.profile.profile_picture.url }}" alt="User profile picture">
+            {% else %}
+                <img class="profile-picture" src="/static/assets/images/default.jpg" alt="Image of default profile picture">
+            {% endif %}
+        </div>
+        <form method="POST" action="" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h1>Update profile photo here:</h1>
+            <h4>{{ form.profile_picture }}</h4>
+            <input class="btn btn-dark" type="submit" name="Update photo">
+        </form>
     </div>
 </div>
 
