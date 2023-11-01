@@ -16,3 +16,10 @@ def merchandise_details(request, merchandise_id):
 	    'product':product,
     }
     return render(request, 'merchandise_detail.html', context)
+
+
+def checkout_basket(request):
+    return render(request, 'checkout_basket.html')
+
+def checkout(request):
+    return render(request, 'checkout.html')

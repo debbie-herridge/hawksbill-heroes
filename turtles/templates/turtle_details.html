@@ -5,23 +5,34 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
-            <h1 class="pb-0 mb-0 text-uppercase">{{ turtle.name }}</h1>
-        </div>
-    </div>
-    <div class="row mb-3 pt-5"> 
-        <div class="col-6">
-            <img class="card-img-top dashboard" src="{{ turtle.image.url }}" alt="{{ turtle.name }}">
-        </div>
-        <div class="col-5">
-            <h4 class="pb-0 mb-5"><strong> Weight: </strong>{{ turtle.weight }}</h4>
-            <h4 class="pb-0 mb-5"><strong> Age: </strong>{{ turtle.age }}</h4>
-            <h4 class="pb-0 mb-5"><strong> Size: </strong>{{ turtle.size }}</h4>
-            <h4 class="pb-0 mb-5"><strong> Discovery Date: </strong>{{ turtle.discovery_date }}</h4>
+            <h1 class=" pb-0 mb-0 text-uppercase">{{ turtle.name }}</h1>
         </div>
     </div>
     <div class="row">
         <div class="col-12">
-            <p class="pb-0 mb-5 text-center">{{ turtle.description }}</p>
+            <p class="mt-3 text-center">{{ turtle.description }}</p>
+        </div>
+    </div>
+    <div class="row mb-3 pt-3"> 
+        <div class="col-12 col-md-9">
+            <img class="card-img-top dashboard" src="{{ turtle.image.url }}" alt="{{ turtle.name }}">
+        </div>
+        <div class="col-12 col-md-3">
+            <hr>
+            <h5 class="pb-0 mb-3"><strong> Weight: </strong></h5>
+            <p>{{ turtle.weight }}</p>
+            <hr>
+            <h5 class="pb-0 mb-3"><strong> Age: </strong></h5>
+            <p>{{ turtle.age }}</p>
+            <hr>
+            <h5 class="pb-0 mb-3"><strong> Size: </strong></h5>
+            <p>{{ turtle.size }}</p>
+            <hr>
+            <h5 class="pb-0 mb-3"><strong> Discovery Date: </strong></h5>
+            <p>{{ turtle.discovery_date }}</p>
+            <hr>
+            <a href="{% url 'turtles' %}" class="mt-2 btn btn-dark">Back to turles</a>
+            <hr>
         </div>
     </div>
 </div>
