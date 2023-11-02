@@ -73,10 +73,13 @@ footer {
 
 
 .dashboard {
-    border: black 2px solid;
     border-radius: 5px;
     margin-bottom: 2em;
     text-align: center;
+}
+
+.dashboard:hover {
+    box-shadow: 10px 10px 8px rgb(75, 75, 75);
 }
 
 #dashboard-background {
@@ -87,6 +90,16 @@ footer {
     overflow: hidden;
     background-size:cover;
     background-position: center;
+}
+
+.merchandise-background {
+        background-image: url("/static/assets/images/turtles-swimming.jpg");
+        width: 100vw;
+        margin: 0;
+        height: auto;
+        overflow: hidden;
+        background-size:cover;
+        background-position: center;
 }
 
 .dashboard-details {
@@ -138,5 +151,11 @@ a:hover {
 
 #product-image {
     max-height: 70vh;
+    object-fit: cover;
+}
+
+#home-image {
+    width: 100%!important;
+    height: 70vh;
     object-fit: cover;
 }

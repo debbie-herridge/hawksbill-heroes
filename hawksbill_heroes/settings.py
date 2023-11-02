@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'account.apps.AccountConfig',
     'turtles',
     'merchandise',
+    'checkout',
 ]
 
 MIDDLEWARE = [

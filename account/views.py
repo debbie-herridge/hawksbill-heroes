@@ -65,15 +65,14 @@ def userDeleted(request):
 
 
 def UpdateProfilePicture(request):
-    profile = request.user.profile
-    form = ProfilePictureForm(instance=profile)
-
     if request.method == 'POST':
-        form = ProfilePictureForm(request.POST, request.FILES, instance=profile)
+        form = ProfilePictureForm(request.POST, request.FILES)
+ 
         if form.is_valid():
-            form.save
-        
-    context = {
-        'form':form
-    }
-    return render(request, "edit_profile_picture.html", context)
+            form.save()
+            return redirect('dashboard')
+        else:
+            messages.error(request, 'Error saving form, please refresh and try again.')
+            print (form.errors)
+            return render(request, 'edit_profile_picture.html',{})
+ 
