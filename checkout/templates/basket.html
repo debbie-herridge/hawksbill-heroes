@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+    <h1>Shopping basket</h1>
+    <hr>
+    <div class="row">
+        <div class="col">
+            {% if basket_items %}
+                <div><h1>INSERT TABLE</h1></div>
+            {% else %}
+                <div class="text-center">
+                    <p>Your basket is empty.</p>
+                    <a href="{% url 'merchandise' %}" class="btn btn-dark">Back to products</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{%endblock%}
