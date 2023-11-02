@@ -42,13 +42,14 @@
                     </div>
                     <div class="mt-2">
                         <input type="submit" class="btn btn-dark text-uppercase" value="Add to Bag">
-                        <a href="{% url 'merchandise' %}" class="btn btn-dark">
-                            <span class="text-uppercase">Keep Shopping</span>
-                        </a>
                     </div>
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 </div>
             </form>
+            <div class="mt-5 text-end">
+                <a href="{% url 'merchandise' %}" class="btn btn-dark">Keep Shopping</a>
+                <a href="{% url 'checkout' %}" class="btn btn-dark">View basket</a>
+            </div>
         </div>
     </div>
 </div>

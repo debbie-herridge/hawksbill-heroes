@@ -7,8 +7,49 @@
     <div class="row">
         <div class="col">
             {% if basket_items %}
-                <div><h1>INSERT TABLE</h1></div>
-                {{ basket_items }}
+                <table class='table table-hover'>
+                    <thead>
+                        <tr>
+                            <th scope="col">Product Info</th>
+                            <th scope="col"></th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Subtotal</th>
+                        </tr>
+                    </thead>
+                    {% for item in basket_items %}
+                        <tr>
+                            <td>
+                                <img class="img-fluid" id="basket-image" src="{{ item.product.image.url }}">
+                            </td>
+                            <td>
+                                <p><strong>{{ item.product.name }}</strong></p>
+                            </td>
+                            <td>
+                                <p><strong>£{{ item.product.price }}</strong></p>
+                            </td>
+                            <td>
+                                <p><strong>{{ item.quantity }}</strong></p>
+                            </td>
+                            <td>
+                                <p><strong>{{ item.product.price }}</strong></p>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="5" class="pt-5 text-end">
+                            <h5><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h5>
+                            <h5><strong>Delivery Total: £{{ delivery|floatformat:2 }}</strong></h5>
+                            <h5><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h5>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" class="pt-5 text-end">
+                            <a href="{% url 'merchandise' %}" class="btn btn-dark">Back to Merchandise</a>
+                            <a href="" class="btn btn-dark">Secure Checkout</a>
+                        </td>
+                    </tr>
+                </table>
             {% else %}
                 <div class="text-center">
                     <p>Your basket is empty.</p>

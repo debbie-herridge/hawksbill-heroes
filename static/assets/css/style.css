@@ -159,3 +159,8 @@ a:hover {
     height: 70vh;
     object-fit: cover;
 }
+
+#basket-image {
+    max-width: 7em;
+    max-height: 7em;
+}
