@@ -1,8 +1,10 @@
 from django.db import models
 from account.models import Profile
 
-# Model for all turtles
 class Turtle(models.Model):
+    """
+    Handles all data information for each turtle.
+    """
     name = models.CharField(max_length=50)
     image = models.FileField(upload_to='turtles')
     description = models.CharField(max_length=500)

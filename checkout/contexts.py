@@ -4,6 +4,9 @@ from django.shortcuts import get_object_or_404
 from merchandise.models import Product
 
 def basket_contents(request):
+    """
+    Handles basket item data and total cost including delivery.
+    """
     basket_items = []
     total = 0
     product_count = 0
@@ -11,6 +14,7 @@ def basket_contents(request):
     delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
 
     for item_id, item_data in basket.items():
+        # Updates basket data with item
         if isinstance(item_data,int):
             product = get_object_or_404(Product, pk=item_id)
             total += item_data * product.price
@@ -21,6 +25,7 @@ def basket_contents(request):
                 'product':product,
             })
         else: 
+            # Updates basket data with items that have size data
             product = get_object_or_404(Product, pk=item_id)
             for size, quantity in item_data['items_by_size'].items():
                 total += quantity * product.price
@@ -31,7 +36,6 @@ def basket_contents(request):
                     'product':product,
                     'size': size,
                 })
-
         
     grand_total = delivery + total
     context = {
@@ -41,5 +45,4 @@ def basket_contents(request):
         'delivery':delivery,
         'grand_total':grand_total,
     }
-
     return context

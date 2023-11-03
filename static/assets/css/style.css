@@ -1,6 +1,7 @@
 /* Google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Sofia+Sans&display=swap');
 
+/* General styling */
 body {
     font-family: 'Sofia Sans', sans-serif;
     background-color: #FFFCF1;
@@ -9,22 +10,21 @@ body {
     flex-direction: column;
 }
 
-h1 {
+h1, h2, h3 {
     text-align: center;
     margin:1em;
 }
 
-h2 {
-    margin:1em;
-    text-align: center;
+strong {
+    text-transform: uppercase;
+    font-weight: bolder;
 }
 
-h3 {
-    margin:1em;
-    text-align: center;
+.text-colour {
+    color: black;
 }
 
-/* nav bar background colour */
+/* Nav bar */
 .navbar {
     background-color: #5F9EA0 !important;
 }
@@ -41,6 +41,7 @@ h3 {
     text-decoration: underline;
 }
 
+/* Footer */
 footer {
     width: 100%;
     background-color: #5F9EA0;
@@ -48,13 +49,32 @@ footer {
     padding: 3rem !important;
 }
 
-
-/* footer email address background */
+/* Footer email address background */
 .form-control {
     background-color: transparent;
     border: black 1px solid;
 }
 
+/* Homepage image */
+#home-image {
+    width: 100%!important;
+    height: 70vh;
+    object-fit: cover;
+}
+
+/* Link styling */
+a {
+    text-transform: uppercase;
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Styling for Turtles pages  */
 .add-turtle-container {
     width:100%;
     background-color: #8FBC8F;
@@ -71,7 +91,44 @@ footer {
     padding: 10px;
 }
 
+/* Styling for merchandise pages */
+.merchandise-background {
+    background-image: url("/static/assets/images/turtles-swimming.jpg");
+    width: 100vw;
+    margin: 0;
+    height: auto;
+    overflow: hidden;
+    background-size:cover;
+    background-position: center;
+}
 
+#product-image {
+    max-height: 80vh;
+    object-fit: cover;
+}
+
+.container-account {
+    height: 800px;
+    padding: 3em 6em;
+}
+
+/* Checkout basket */
+.basket-image {
+    max-width: 7em;
+    max-height: 7em;
+}
+
+/* Background image for user registration/log  */
+.turtle-background {
+    background-image: url("/static/assets/images/turtle-swimming-background.jpg");
+    margin: 0;
+    height: 800px;
+    overflow: hidden;
+    background-size:cover;
+    background-position: center;
+}
+
+/* Styling for user dashboard pages */
 .dashboard {
     border-radius: 5px;
     margin-bottom: 2em;
@@ -82,24 +139,10 @@ footer {
     box-shadow: 10px 10px 8px rgb(75, 75, 75);
 }
 
-#dashboard-background {
-    background-image: url("/static/assets/images/turtle-swimming-birdseye.jpg");
-    width: 100vw;
-    margin: 0;
-    height: auto;
-    overflow: hidden;
-    background-size:cover;
-    background-position: center;
-}
-
-.merchandise-background {
-        background-image: url("/static/assets/images/turtles-swimming.jpg");
-        width: 100vw;
-        margin: 0;
-        height: auto;
-        overflow: hidden;
-        background-size:cover;
-        background-position: center;
+.profile-picture {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .dashboard-details {
@@ -109,59 +152,12 @@ footer {
     border-radius: 10px;
 }
 
-.turtle-background {
-    background-image: url("/static/assets/images/turtle-swimming-background.jpg");
+#dashboard-background {
+    background-image: url("/static/assets/images/turtle-swimming-birdseye.jpg");
+    width: 100vw;
     margin: 0;
-    height: 800px;
+    height: auto;
     overflow: hidden;
     background-size:cover;
     background-position: center;
-}
-
-
-.container-account {
-    height: 800px;
-    padding: 3em 6em;
-}
-
-strong {
-    text-transform: uppercase;
-    font-weight: bolder;
-}
-
-.text-colour {
-    color: black;
-}
-
-.profile-picture {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-a {
-    text-transform: uppercase;
-    color: black;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-#product-image {
-    max-height: 80vh;
-    object-fit: cover;
-}
-
-#home-image {
-    width: 100%!important;
-    height: 70vh;
-    object-fit: cover;
-}
-
-.basket-image {
-    max-width: 7em;
-    max-height: 7em;
 }

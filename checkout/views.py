@@ -3,12 +3,13 @@ from django.contrib import messages
 
 from .forms import OrderForm
 
-# Create your views here.
-
 def basket(request):
     return render(request, 'basket.html',{})
 
 def checkout(request):
+    """
+    Pass form for users to input checkout details
+    """
     basket = request.session.get('basket',{})
     if not basket:
         return redirect(reverse('merchandise'))
@@ -17,5 +18,4 @@ def checkout(request):
     context = {
         'order_form':order_form,
     }
-
     return render(request, 'checkout.html' , context)

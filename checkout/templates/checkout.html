@@ -5,7 +5,7 @@
     <h1>Finalise order</h1>
     <hr>
     <div class="row justify-content-center">
-        <h4 class="text-center mb-5">A summery of your oder is below, if you are happy then please fill out the form below to complete your order</h4>
+        <h4 class="text-center mb-5">A summary of your order is below, please fill out the form below to complete your order</h4>
         {% for item in basket_items %}
         <div class="col-2 text-end">
             <img class="img-fluid basket-image" src="{{ item.product.image.url }}" alt="{{ product.name }}">
@@ -18,8 +18,8 @@
         <div class="col-2 text-end">
             <p class="my-0 small text-muted">£{{ item.product.price }}</p>
         </div>
-    </div>    
-    {% endfor %}
+        {% endfor %}
+    </div>
     <div class="row justify-content-center">
         <div class="col-10">
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">

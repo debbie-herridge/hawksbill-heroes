@@ -20,29 +20,29 @@
                         </tr>
                     </thead>
                     {% for item in basket_items %}
-                        <tr>
-                            <td>
-                                <img class="img-fluid basket-image" src="{{ item.product.image.url }}">
-                            </td>
-                            <td>
-                                <p><strong>{{ item.product.name }}</strong></p>
-                            </td>
-                            <td>
-                                <p><strong>£{{ item.product.price }}</strong></p>
-                            </td>
-                            <td>
-                                <p><strong>{% if item.product.has_sizes %}{{ item.size }}{% else %}N/A{% endif %}</strong></p>
-                            </td>
-                            <td>
-                                <p><strong>{% if item.size %}{{ item.quantity }}{% else %}{{ item.quantity }}{% endif %}</strong></p>
-                            </td>
-                            <td>
-                                <p><strong>{{ item.product.price }}</strong></p>
-                            </td>
-                            <td>
-                                <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small>Remove</small></a>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td>
+                            <img class="img-fluid basket-image" src="{{ item.product.image.url }}">
+                        </td>
+                        <td>
+                            <p><strong>{{ item.product.name }}</strong></p>
+                        </td>
+                        <td>
+                            <p><strong>£{{ item.product.price }}</strong></p>
+                        </td>
+                        <td>
+                            <p><strong>{% if item.product.has_sizes %}{{ item.size }}{% else %}N/A{% endif %}</strong></p>
+                        </td>
+                        <td>
+                            <p><strong>{% if item.size %}{{ item.quantity }}{% else %}{{ item.quantity }}{% endif %}</strong></p>
+                        </td>
+                        <td>
+                            <p><strong>{{ item.product.price }}</strong></p>
+                        </td>
+                        <td>
+                            <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small>Remove</small></a>
+                        </td>
+                    </tr>
                     {% endfor %}
                     {% if messages %}
                         {% for message in messages %}
@@ -61,11 +61,11 @@
                     <a href="{% url 'merchandise' %}" class="btn btn-dark">Back to Merchandise</a>
                     <a href="{% url 'checkout' %}" class="btn btn-dark">Secure Checkout</a>
                 </div>
-            {% else %}
-                <div class="text-center">
-                    <p>Your basket is empty.</p>
-                    <a href="{% url 'merchandise' %}" class="btn btn-dark">Back to products</a>
-                </div>
+                {% else %}
+                    <div class="text-center">
+                        <p>Your basket is empty.</p>
+                        <a href="{% url 'merchandise' %}" class="btn btn-dark">Back to products</a>
+                    </div>
             {% endif %}
         </div>
     </div>
@@ -75,6 +75,7 @@
 
 {% block postloadjs %}
 
+<!-- Javascript to handle remove button event on item -->
 <script type="text/javascript">
     $('.remove-item').click(function(e) {
         var csrfToken = "{{ csrf_token }}";

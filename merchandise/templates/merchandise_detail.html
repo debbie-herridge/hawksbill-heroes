@@ -15,16 +15,16 @@
             <form class="form text-center" action="{% url 'add_to_basket' product.id %}" method="POST">
                 {% csrf_token %}
                     {% if product.has_sizes %}
-                        <div>
-                            <p><strong>Size:</strong></p>
-                            <select class="form-control text-center" name="product_size" id="id_product_size">
-                                <option value="xs">XS</option>
-                                <option value="s">S</option>
-                                <option value="m">M</option>
-                                <option value="l">L</option>
-                                <option value="xl">XL</option>
-                            </select>
-                        </div>
+                    <div>
+                        <p><strong>Size:</strong></p>
+                        <select class="form-control text-center" name="product_size" id="id_product_size">
+                            <option value="xs">XS</option>
+                            <option value="s">S</option>
+                            <option value="m">M</option>
+                            <option value="l">L</option>
+                            <option value="xl">XL</option>
+                        </select>
+                    </div>
                     {% endif %}
                     <p class="mt-3"><strong>Quantity:</strong></p>
                     <div class="text-center">

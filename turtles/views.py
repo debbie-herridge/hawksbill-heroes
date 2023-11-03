@@ -5,6 +5,9 @@ from .forms import TurtleForm
 from .models import Turtle
 
 def turtles(request):
+    """
+    Show all turtles in database and allow admin users to add more.
+    """
     turtles = Turtle.objects.all()
     turtle_form = TurtleForm()
 

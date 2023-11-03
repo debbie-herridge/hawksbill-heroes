@@ -3,16 +3,16 @@
 {% block content %}
 
 <div class="turtle-background">
-    <div class="container container-account text-center">
-      <h1>Are you sure you want to delete your account?</h1>
-        <form method="post">
-          {% csrf_token %}
-          <p>Please tick the box to confirm you are happy to proceed.</p>
-          {{ form.as_p }}
-          <button class="btn btn-dark btn-block m-4 text-uppercase" type="submit">Submit</button>
-        </form>
-        <a class="btn btn-dark btn-block m-4" href="{% url 'dashboard' %}">Cancel</a>
-    </div>
+  <div class="container container-account text-center">
+    <h1>Are you sure you want to delete your account?</h1>
+      <form method="post">
+        {% csrf_token %}
+        <p>Please tick the box to confirm you are happy to proceed.</p>
+        {{ form.as_p }}
+        <button class="btn btn-dark btn-block m-4 text-uppercase" type="submit">Submit</button>
+      </form>
+      <a class="btn btn-dark btn-block m-4" href="{% url 'dashboard' %}">Cancel</a>
+  </div>
 </div>
 
 {% endblock %}

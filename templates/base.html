@@ -5,16 +5,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon links -->
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/images/apple-touch-icon.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/images/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/favicon-16x16.png' %}">
     <link rel="manifest" href="/site.webmanifest">
+    <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/50007efa0a.js" crossorigin="anonymous"></script>
+    <!-- CSS Stylesheet -->
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}"> 
+
     <title>Hawksbill Heroes</title>
+    <meta name="description" content="We are a charity to spread awareness about Hawksbill Turtles and raise money to help prevent their extinction.">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg">
@@ -22,9 +30,9 @@
             <img src="{% static 'assets/images/hawksbill-heroes-nav-logo.jpg' %}" width="110" height="100" alt="hawksbill heroes logo">
         </a>
         <div>
-          {% if user.is_authenticated %}
-            <div class='fs-4 text-uppercase'>Hello, {{user}}! </div>
-          {% endif %}
+        {% if user.is_authenticated %}
+          <div class='fs-4 text-uppercase'>Hello, {{user}}! </div>
+        {% endif %}
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
