@@ -13,8 +13,10 @@
                             <th scope="col">Product Info</th>
                             <th scope="col"></th>
                             <th scope="col">Price</th>
+                            <th scope="col">Size</th>
                             <th scope="col">Quantity</th>
                             <th scope="col">Subtotal</th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
                     {% for item in basket_items %}
@@ -29,27 +31,31 @@
                                 <p><strong>£{{ item.product.price }}</strong></p>
                             </td>
                             <td>
-                                <p><strong>{{ item.quantity }}</strong></p>
+                                <p><strong>{% if item.product.has_sizes %}{{ item.size }}{% else %}N/A{% endif %}</strong></p>
+                            </td>
+                            <td>
+                                <p><strong>{% if item.size %}{{ item.quantity }}{% else %}{{ item.quantity }}{% endif %}</strong></p>
                             </td>
                             <td>
                                 <p><strong>{{ item.product.price }}</strong></p>
                             </td>
+                            <td>
+                                <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small>Remove</small></a>
+                            </td>
                         </tr>
                     {% endfor %}
                     <tr>
-                        <td colspan="5" class="pt-5 text-end">
+                        <td colspan="7" class="pt-7 text-end">
                             <h5><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h5>
                             <h5><strong>Delivery Total: £{{ delivery|floatformat:2 }}</strong></h5>
                             <h5><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h5>
                         </td>
                     </tr>
-                    <tr>
-                        <td colspan="5" class="pt-5 text-end">
-                            <a href="{% url 'merchandise' %}" class="btn btn-dark">Back to Merchandise</a>
-                            <a href="" class="btn btn-dark">Secure Checkout</a>
-                        </td>
-                    </tr>
                 </table>
+                <div class="mt-5 mb-5 text-end">
+                    <a href="{% url 'merchandise' %}" class="btn btn-dark">Back to Merchandise</a>
+                    <a href="" class="btn btn-dark">Secure Checkout</a>
+                </div>
             {% else %}
                 <div class="text-center">
                     <p>Your basket is empty.</p>

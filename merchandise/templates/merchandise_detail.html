@@ -14,41 +14,40 @@
             <hr>
             <form class="form text-center" action="{% url 'add_to_basket' product.id %}" method="POST">
                 {% csrf_token %}
+                    {% if product.has_sizes %}
+                        <div>
+                            <p><strong>Size:</strong></p>
+                            <select class="form-control text-center" name="product_size" id="id_product_size">
+                                <option value="xs">XS</option>
+                                <option value="s">S</option>
+                                <option value="m">M</option>
+                                <option value="l">L</option>
+                                <option value="xl">XL</option>
+                            </select>
+                        </div>
+                    {% endif %}
                     <p class="mt-3"><strong>Quantity:</strong></p>
                     <div class="text-center">
                         <div class="form-group w-50">
-                            <div class="input-group input-group-{{ product.id }}">
-                                <div class="input-group-prepend">
-                                    <button class="decrement-qty btn btn-black rounded-0 decrement-qty_{{ product.id }}" 
-                                        data-item_id="{{ product.id }}">
-                                        <span class="icon">
-                                            <i class="fas fa-minus"></i>
-                                        </span>
-                                    </button>
-                                </div>
-                                <input class="form-control qty_input id_qty_{{ product.id }}" type="number"
-                                    name="quantity" value="1" min="1" max="99"
-                                    data-item_id="{{ product.id }}">
-                                <div class="input-group-append">
-                                    <button class="increment-qty btn btn-black rounded-0 increment-qty_{{ product.id }}"
-                                        data-item_id="{{ product.id }}">
-                                        <span class="icon">
-                                            <i class="fas fa-plus"></i>
-                                        </span>
-                                    </button>
-                                </div>
-                            </div>
+                            <input class="form-control qty_input id_qty_{{ product.id }}" type="number"
+                                name="quantity" value="1" min="1" max="99"
+                                data-item_id="{{ product.id }}">
                         </div>
                     </div>
                     <div class="mt-2">
-                        <input type="submit" class="btn btn-dark text-uppercase" value="Add to Bag">
+                        <input type="submit" class="btn btn-dark text-uppercase mt-3" value="Add to Bag">
                     </div>
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p class="text-center mt-3"><strong>{{ message }}</strong></p>
+                        {% endfor %}
+                    {% endif %}
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 </div>
             </form>
             <div class="mt-5 text-end">
                 <a href="{% url 'merchandise' %}" class="btn btn-dark">Keep Shopping</a>
-                <a href="{% url 'checkout' %}" class="btn btn-dark">View basket</a>
+                <a href="{% url 'basket' %}" class="btn btn-dark">View basket</a>
             </div>
         </div>
     </div>
