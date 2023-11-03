@@ -2,21 +2,65 @@
 {% block content %}
 
 <div class="container">
-    <h1>Complete order</h1>
+    <h1>Finalise order</h1>
     <hr>
-    <div class="row">
-        <div class="col">
-            
-                    
-            {% if messages %}
-                {% for message in messages %}
-                    <p class="text-center mt-3"><strong>{{ message }}</strong></p>
-                {% endfor %}
-            {% endif %}
-            <div class="text-center">
-                <a href="{% url 'merchandise' %}" class="btn btn-dark">Back to products</a>
-            </div>
+    <div class="row justify-content-center">
+        <h4 class="text-center mb-5">A summery of your oder is below, if you are happy then please fill out the form below to complete your order</h4>
+        {% for item in basket_items %}
+        <div class="col-2 text-end">
+            <img class="img-fluid basket-image" src="{{ item.product.image.url }}" alt="{{ product.name }}">
         </div>
+        <div class="col-5 text-start">
+            <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+            <p class="my-0 small">Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
+            <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
+        </div>
+        <div class="col-2 text-end">
+            <p class="my-0 small text-muted">£{{ item.product.price }}</p>
+        </div>
+    </div>    
+    {% endfor %}
+    <div class="row justify-content-center">
+        <div class="col-10">
+            <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+                {% csrf_token %}
+                <fieldset>
+                    <legend class="mt-5">Details:</legend>
+                    <hr>
+                    {{ order_form.full_name | as_crispy_field }}
+                    {{ order_form.email | as_crispy_field }}
+                    {{ order_form.phone_number | as_crispy_field }}
+                </fieldset>
+                <fieldset>
+                    <legend class="mt-5">Delivery:</legend>
+                    <hr>
+                    {{ order_form.street_address1 | as_crispy_field }}
+                    {{ order_form.street_address2 | as_crispy_field }}
+                    {{ order_form.town_or_city | as_crispy_field }}
+                    {{ order_form.county | as_crispy_field }}
+                    {{ order_form.postcode | as_crispy_field }}
+                </fieldset>
+                <fieldset>
+                    <legend class="mt-5">Payment:</legend>
+                    <hr>
+                    <div class="" id="card-element"></div>
+                    <div class="" id="card-errors" role="alert"></div>
+                    <input type="hidden" value="{{ client_secret }}" name="client_secret">
+                </fieldset>
+                <div class="text-end">
+                    <h5><strong>Total: £{{ grand_total|floatformat:2 }}</strong></h5>
+                    <button id="submit-button" class="btn btn-dark text-uppercase mt-2">Complete Order</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    {% if messages %}
+        {% for message in messages %}
+            <p class="text-center mt-3"><strong>{{ message }}</strong></p>
+        {% endfor %}
+    {% endif %}
+    <div class="text-start">
+        <a href="{% url 'basket' %}" class="btn btn-dark m-5">Back to basket</a>
     </div>
 </div>
 

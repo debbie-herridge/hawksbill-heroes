@@ -161,7 +161,7 @@ a:hover {
     object-fit: cover;
 }
 
-#basket-image {
+.basket-image {
     max-width: 7em;
     max-height: 7em;
 }
