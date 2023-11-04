@@ -4,6 +4,7 @@ Website designed for a charity raising funds to aid in the mission of keeping Ha
 
 ## Table of Contents
 - UX Design
+- Marketing strategies
 - Testing
 - Technologies Used
 - Deployment
@@ -38,6 +39,8 @@ The site boasts clean consistant styling throughout the site.
 - Donation page
 - Turtle subscription and adoption
 
+## Marketing strategies
+The target market are animal lovers who are environment cautious. As this is a Charity there is a limited marketing budget, as consumers would want their donations to be used on the turtles and not marketing, therefore the charity adopts creative and cost-effective strategies, such as using images of the turtles on social media and community events.
 
 ## Technologies Used
 

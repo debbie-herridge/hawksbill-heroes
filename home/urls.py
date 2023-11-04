@@ -1,6 +1,8 @@
 from . import views
 from django.urls import path, include
 
+handler404 = 'home.views.page_not_found'
+
 urlpatterns = [
     path('', views.home, name='home'),
     path('donate/', views.donate, name='donate'),

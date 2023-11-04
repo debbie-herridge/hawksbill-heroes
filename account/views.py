@@ -37,7 +37,6 @@ def dashboard(request):
     }
     return render(request, 'dashboard.html', context)
 
-@login_required
 class EditUser(generic.UpdateView):
     """
     Edit signed in users information
@@ -49,7 +48,6 @@ class EditUser(generic.UpdateView):
     def get_object(self):
         return self.request.user
 
-@login_required
 class UserDeleteView(LoginRequiredMixin, View):
     """
     Deletes the currently signed in user and all associated data.
@@ -93,4 +91,3 @@ def UpdateProfilePicture(request):
             messages.error(request, 'Error saving form, please refresh and try again.')
             print (form.errors)
             return render(request, 'edit_profile_picture.html',{})
- 

@@ -18,3 +18,8 @@ def charge(request):
 def success_msg(request, args):
     amount = args
     return render(request, 'success', {'amount':amount})
+
+
+# 404 error page
+def page_not_found(request, exception, template_name='404.html'):
+    return render(request, template_name)

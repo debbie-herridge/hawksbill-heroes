@@ -1,1 +1,1 @@
-web: gunicorn hawksbill_heroes.wsgi
+web: gunicorn hawksbill_heroes.wsgi:application
