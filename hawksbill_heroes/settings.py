@@ -35,7 +35,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     '8000-debbieherri-hawksbillhe-grrhi8h3as6.ws-eu105.gitpod.io',
-    'https://hawksbill-heroes-7f765f18a538.herokuapp.com/',
+    'hawksbill-heroes-7f765f18a538.herokuapp.com/',
     '.herokuapp.com'
     'hawksbill-heroes-7f765f18a538.com'
     ]
