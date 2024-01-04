@@ -161,3 +161,7 @@ a:hover {
     background-size:cover;
     background-position: center;
 }
+
+.stripe-style-input {
+    margin-bottom: 3px !important;
+}
