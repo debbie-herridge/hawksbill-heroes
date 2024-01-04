@@ -162,6 +162,12 @@ a:hover {
     background-position: center;
 }
 
+
+/* checkout */
 .stripe-style-input {
     margin-bottom: 3px !important;
+}
+
+#card-errors {
+    color: #dc3545;
 }

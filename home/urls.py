@@ -1,7 +1,6 @@
 from . import views
 from django.urls import path, include
-
-handler404 = 'home.views.page_not_found'
+from .views import handler404
 
 urlpatterns = [
     path('', views.home, name='home'),
@@ -9,3 +8,5 @@ urlpatterns = [
     path('charge/', views.charge, name='charge'),
     path('success/<str:args>/', views.success_msg, name='success'),
 ]
+
+handler404 = 'home.views.handler404'

@@ -19,6 +19,8 @@
     <script src="https://kit.fontawesome.com/50007efa0a.js" crossorigin="anonymous"></script>
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}"> 
+    <!-- Stripe -->
+    <script src="https://js.stripe.com/v3/"></script>
 
     <title>Hawksbill Heroes</title>
     <meta name="description" content="We are a charity to spread awareness about Hawksbill Turtles and raise money to help prevent their extinction.">
@@ -115,8 +117,9 @@
       </div>
     </footer>
 
-{% block postloadjs %}
 
+{% block postloadjs %}
+<!-- Javascript Goes here -->
 {% endblock %}
 
 </body>

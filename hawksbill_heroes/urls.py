@@ -16,8 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from .views import handler404
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
@@ -28,5 +26,3 @@ urlpatterns = [
     path('checkout/', include('checkout.urls')),
     path('basket/', include('basket.urls')),
 ]
-
-handler404 = 'boutique_ado.views.handler404'
