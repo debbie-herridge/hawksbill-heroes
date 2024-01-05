@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <h1>Thank you for your order!</h1>
+    <hr>
+    <div class="justify-content-center">
+        <p class="mb-5">You will shortly receive a confirmation email to <strong>{{ order.email }}</strong></p>
+    </div>
+    <div class="text-start">
+        <a href="{% url 'dashboard' %}" class="btn btn-dark m-5">Back to dashboard</a>
+    </div>
+</div>
+
+{%endblock%}
+
+{% block postloadjs %}
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+    <script src="{% static '/checkout/js/stripe_elements.js' %}"></script>
+{% endblock %}
