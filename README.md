@@ -1,15 +1,16 @@
 # Hawksbill Heroes
 
-Website designed for a charity raising funds to aid in the mission of keeping Hawksbill Sea Turtles from going extinct. The site currently features a merchandise shop where users can purchase items and a personalised dashboard where they can see their orders.
+![Hawksbill Heroes Logo](/static/assets/images/hawksbill-heroes-nav-logo.jpg)
 
-## Table of Contents
-- UX Design
-- Marketing strategies
-- Testing
-- Technologies Used
-- Deployment
-- Acknowledgments
+Hawksbill Heroes is a organisation raising funds to aid in the mission of keeping Hawksbill Sea Turtles from going extinct. The site currently features a merchandise shop where users can purchase items and a personalised dashboard where they can see their orders.
 
+The site is targeted towards envirnomentally concious people some of whom will already know about the Hawksbill Turtles but for others it will teach them about the animal, explain the dangers they are facing and what they can do to help.
+
+This website does take payments using Stripe; Please note that the website is for project purposes only, do not enter any personal credit/debit cards when placing orders. You can find a list of dummy cards to use under Stripes documentation [here](https://stripe.com/docs/testing#cards).
+
+View the deployed app here.
+
+![Image to show the website on different media screens](/static/assets/images/am-i-responsive.jpg)
 
 ## UX
 
@@ -30,6 +31,8 @@ Returning users are able to log in and:
 ### Design
 The design is minimilistic with many photos of the turtles to showcase their beauty. The colour scheme is colour picked from the images, with the header and footer being a green/blue tone to match the water and the soft beige background body matching the turtles body.
 
+![Colour palette chosen for website](/static/assets/images/color-palette.jpg)
+
 ### Features
 
 #### Current features
@@ -45,7 +48,7 @@ The target market are animal lovers who are environment cautious. As this is a C
 ## Technologies Used
 
 ### Languages 
-- [HTML](https://en.wikipedia.org/wiki/HTML5
+- [HTML](https://en.wikipedia.org/wiki/HTML5)
 - [CSS](https://en.wikipedia.org/wiki/CSS)
 - [Python](https://www.python.org/)
 - [Javascript](https://www.javascript.com/)
@@ -66,6 +69,20 @@ Used to store code for this project after being pushed from Git.
 - [Canva](https://www.canva.com/posters/0)
 Used to make the website logo for the navigation bar and merchandise logo.
 
+
+
+- [Django](https://www.djangoproject.com/) 
+- [ElephantSQL](https://www.elephantsql.com/)
+- [Cloudinary](https://cloudinary.com/ip/gr-sea-gg-brand-home-base?utm_source=google&utm_medium=search&utm_campaign=goog_selfserve_brand_wk22_replicate_core_branded_keyword&utm_term=1329&campaignid=17601148700&adgroupid=141182782954&keyword=cloudinary&device=c&matchtype=e&adposition=&gad_source=1&gclid=CjwKCAiA-P-rBhBEEiwAQEXhH2ndeczu952BxiEy0n2brT63DR2X09OuugdQMRhehy0gXScT3VM9VxoCldEQAvD_BwE) 
+- [Heroku](https://www.heroku.com/)
+- [LucidChart](https://lucid.app/)
+- [Chrome Dev Tools](https://developer.chrome.com/docs/devtools)
+- [Font awesome](https://fontawesome.com/)
+- [Google fonts](https://fonts.google.com/)
+- [GitPod](https://gitpod.io/workspaces)
+- [Favicon](https://favicon.io/)
+- [Pylint](https://pypi.org/project/pylint/)
+- [Grammerly](https://www.grammarly.com/service/download)
 
 ## Testing
 
