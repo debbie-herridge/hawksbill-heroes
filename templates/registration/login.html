@@ -4,6 +4,9 @@
 <div class="turtle-background">
     <div class="container container-account mx-auto">
         <h1 class="login-header">Welcome back!</h1>
+        {% for message in messages %}
+            <h4>{{message}}</h4>
+        {% endfor %}
         <form class="col-md-12 section-column text-center" method="POST" action="">
             {% csrf_token %}
             <div>
@@ -19,9 +22,6 @@
                 <a href="{% url 'password_reset' %}">Forgot your password?</a>
             </div>
             <div> 
-            {% for message in messages %}
-                <h4>{{message}}</h4>
-            {% endfor %}
             </div>
             <div>
                 <a href="{% url 'signup' %}">Don't have have an account?</a>

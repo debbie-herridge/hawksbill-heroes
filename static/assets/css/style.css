@@ -24,6 +24,10 @@ strong {
     color: black;
 }
 
+.btn-dark {
+    text-transform: uppercase;
+}
+
 /* Nav bar */
 .navbar {
     background-color: #5F9EA0 !important;

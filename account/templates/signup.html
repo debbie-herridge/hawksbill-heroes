@@ -36,9 +36,14 @@
                 <p>Your password can’t be a commonly used password.</p>
                 <p>Your password can’t be entirely numeric.</p>
             </details>
+            {% for message in messages %}
+                <p class="text-center">{{ message }}</p>
+            {% endfor %}
             <div>
-                <a href="{% url 'login' %}">Already have an account?</a>
                 <button type="submit" class="btn btn-dark mt-4">Sign up!</button>
+            </div>
+            <div class="mt-4">
+                <a href="{% url 'login' %}">Already have an account?</a>
             </div>
         </form>
     </div>

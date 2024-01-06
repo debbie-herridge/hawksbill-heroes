@@ -23,8 +23,15 @@ class SignUp(generic.CreateView):
     form_class = CreateUserForm
 
     def form_valid(self, form):
-        user = form.save()  
-        return redirect('login')
+        if form.is_valid():
+            user = form.save()  
+            return redirect('login')
+        else:
+            messages.error(request, 'Unable to create account, please \
+                            double check details and ensure password matches \
+                            criteria. If issue persists please email, \
+                            support@hawksbillheroes.com.')
+            return redirect('signup')
 
 @login_required
 def dashboard(request):
@@ -65,7 +72,7 @@ class UserDeleteView(LoginRequiredMixin, View):
             messages.success(request, 'Account successfully deleted')
             return redirect('user-deleted')
         else:
-            messages.success(request, 'Unable to delete account, please email support@hawksbillheroes.com.')
+            messages.error(request, 'Unable to delete account, please email support@hawksbillheroes.com.')
             return redirect('user-deleted')
         return render(request, 'delete.html', {'form': form})
 
