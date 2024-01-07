@@ -12,7 +12,8 @@ from django.urls import reverse_lazy
 from django.shortcuts import render, redirect
 
 from .forms import *
-from .models import * 
+from .models import *
+from checkout.models import Order 
 
 class SignUp(generic.CreateView):
     """
@@ -21,10 +22,10 @@ class SignUp(generic.CreateView):
     template_name = 'signup.html'
     model = Profile
     form_class = CreateUserForm
-
+    
     def form_valid(self, form):
         if form.is_valid():
-            user = form.save()  
+            user = form.save()
             return redirect('login')
         else:
             messages.error(request, 'Unable to create account, please \
@@ -39,8 +40,10 @@ def dashboard(request):
     Display dashboard with users information
     """
     profile = Profile.objects.all()
+    orders = Order.objects.filter(email=request.user.email)
     context = {
         'profile':profile, 
+        'orders':orders,
     }
     return render(request, 'dashboard.html', context)
 
@@ -88,13 +91,14 @@ def UpdateProfilePicture(request):
     """
     Users can update their profile picture.
     """
+    form = ProfilePictureForm(request.POST, request.FILES)
     if request.method == 'POST':
-        form = ProfilePictureForm(request.POST, request.FILES)
- 
         if form.is_valid():
-            form.save()
+            picture = form.save(commit=False)
+            picture.user = request.user
+            picture.save()
             return redirect('dashboard')
         else:
             messages.error(request, 'Error saving form, please refresh and try again.')
             print (form.errors)
-            return render(request, 'edit_profile_picture.html',{})
+    return render(request, 'edit_profile_picture.html',{'form':form})

@@ -107,7 +107,7 @@ a:hover {
 }
 
 #product-image {
-    max-height: 80vh;
+    max-height: 60vh;
     object-fit: cover;
 }
 

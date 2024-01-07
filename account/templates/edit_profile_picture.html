@@ -1,22 +1,22 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 
 <div class="turtle-background">
     <div class="mx-auto container container-account p-0">
         <div class="row">
-            <div class="col-10 col-sm-6 dashboard-details">
+            <div class="col-10 col-lg-6 dashboard-details mb-0">
                 {% if user.profile.profile_picture.url is not none %}
                     <img class="profile-picture" src="{{ request.user.profile.profile_picture.url }}" alt="User profile picture">
                 {% else %}
-                    <img class="profile-picture" src="/static/assets/images/default.jpg" alt="Image of default profile picture">
+                    <img class="profile-picture" src="{% static 'assets/images/default.jpg' %}" alt="Image of default profile picture">
                 {% endif %}
             </div>
-            <div class='col-10 col-sm-4 dashboard-details'>
+            <div class='col-10 col-lg-4 dashboard-details text-center'>
                 <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     <h2>Update profile photo here:</h2>
-                    <p>{{ form.as_p }}</p>
+                    <p>{{ form.profile_picture }}</p>
                     <button class="btn btn-dark" type="submit">Update photo</button>
                     {% for message in messages %}
                         <p class="text-center">{{ message }}</p>
