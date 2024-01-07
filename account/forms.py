@@ -1,12 +1,14 @@
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, User
 from django import forms
 from django.forms import ModelForm
-from .models import Profile
 
 class CreateUserForm(UserCreationForm):
-    class Meta: 
+    """
+    Register new user form.
+    """
+    class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'username','email','password1','password2']
+        fields = ['username', 'first_name', 'last_name', 'email','password1','password2']
 
 class EditUserProfile(UserChangeForm):
     """
@@ -26,11 +28,3 @@ class UserDeleteForm(forms.Form):
     Simple form that provides a checkbox that signals deletion.
     """
     delete = forms.BooleanField(required=True)
-
-class ProfilePictureForm(ModelForm):
-    """
-    Simple form that allows users to upload their own picture.
-    """
-    class Meta:
-        model = Profile
-        fields = ["profile_picture"]

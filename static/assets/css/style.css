@@ -66,6 +66,15 @@ footer {
     object-fit: cover;
 }
 
+/* affliated sites */
+
+.affliated-sites {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
 /* Link styling */
 a {
     text-transform: uppercase;

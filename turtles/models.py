@@ -1,5 +1,4 @@
 from django.db import models
-from account.models import Profile
 
 class Turtle(models.Model):
     """
