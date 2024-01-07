@@ -1,0 +1,62 @@
+{% extends "base.html"  %}
+{% load static %}
+{% block content %}
+
+<div class="add-turtle-container mt-1">
+    <div class="add-turtle-form">
+        <h1>Update turtle details:</h1>
+        <form method="POST" action="" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col add-turtle d-flex justify-content-center">
+                    <label">Name: </label>
+                </div>
+                <div class="col">{{form.name}}</div>
+            </div>
+            <div class="row">
+                <div class="col add-turtle d-flex justify-content-center">
+                    <label">Image upload: </label>
+                </div>
+                <div class="col">{{form.image}}</div>
+            </div>
+            <div class="row">
+                <div class="col add-turtle d-flex justify-content-center">
+                    <label">Turtle description: </label>
+                </div>
+                <div class="col">{{form.description}}</div>
+            </div>
+            <div class="row">
+                <div class="col add-turtle d-flex justify-content-center">
+                    <label">Turtle weight: </label>
+                </div>
+                <div class="col">{{form.weight}}</div>
+            </div>
+            <div class="row">
+                <div class="col add-turtle d-flex justify-content-center">
+                    <label">Turtle age: </label>
+                </div>
+                <div class="col">{{form.age}}</div>
+            </div>
+            <div class="row">
+                <div class="col add-turtle d-flex justify-content-center">
+                    <label">Turtle size: </label>
+                </div>
+                <div class="col">{{form.size}}</div>
+            </div>
+            <div class="row">
+                <div class="col add-turtle d-flex justify-content-center">
+                    <label">Turtle discovery date: </label>
+                </div>
+                <div class="col">{{form.discovery_date}}</div>
+            </div>
+            <div class="row">
+                <div class="col d-flex justify-content-center">
+                    <a href="{% url 'turtles' %}" class="btn btn-dark me-5">Cancel</a>
+                    <button type="submit" class="btn btn-dark">Update</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{%endblock%}

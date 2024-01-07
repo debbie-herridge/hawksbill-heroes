@@ -35,6 +35,7 @@
             <hr>
             {% if user.is_staff %}
                 <a href="{% url 'delete_turtle' turtle.pk %}" class="mt-2 btn btn-dark">Delete turtle</a>
+                <a href="{% url 'update_turtle' turtle.pk %}" class="mt-2 btn btn-dark">Update turtle</a>
             {% endif %}
         </div>
     </div>
