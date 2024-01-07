@@ -40,12 +40,21 @@ def dashboard(request):
     Display dashboard with users information
     """
     profile = Profile.objects.all()
-    orders = Order.objects.filter(email=request.user.email)
-    context = {
-        'profile':profile, 
-        'orders':orders,
-    }
-    return render(request, 'dashboard.html', context)
+    user = request.user
+    if user.is_staff:
+        orders = Order.objects.all()
+        context = {
+            'profile':profile, 
+            'orders':orders,
+        }
+        return render(request, 'dashboard-admin.html', context)
+    else:
+        orders = Order.objects.filter(email=request.user.email)
+        context = {
+            'profile':profile, 
+            'orders':orders,
+        }
+        return render(request, 'dashboard.html', context)
 
 class EditUser(generic.UpdateView):
     """

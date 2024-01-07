@@ -159,6 +159,7 @@ a:hover {
 #dashboard-background {
     background-image: url("/static/assets/images/turtle-swimming-birdseye.jpg");
     width: 100vw;
+    min-height: 70vh;
     margin: 0;
     height: auto;
     overflow: hidden;
