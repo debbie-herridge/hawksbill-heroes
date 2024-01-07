@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
 from .forms import TurtleForm
@@ -28,9 +28,24 @@ def turtles(request):
     }
     return render(request, 'turtles.html', context)
 
-def turtle_details(request, turtle_id):
+def turtleDetails(request, turtle_id):
     turtle = get_object_or_404(Turtle, pk=turtle_id)
     context={
 	    'turtle':turtle,
     }
     return render(request, 'turtle_details.html', context)
+
+def deleteTurtle(request, pk):
+    """
+    Allow admin users to delete a turtle.
+    """
+    turtle = get_object_or_404(Turtle, pk=pk)
+    if request.method == 'POST':
+        turtle.delete()
+        return redirect('turtles')
+    else:
+        print('form not valid')
+    context = {
+        'turtle':turtle,
+    }
+    return render(request, 'delete-turtle.html', context)

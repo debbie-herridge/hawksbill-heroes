@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'checkout',
     'basket',
     'crispy_forms',
+    'django_cleanup.apps.CleanupConfig',
 ]
 
 MIDDLEWARE = [

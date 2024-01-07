@@ -42,7 +42,7 @@ def dashboard(request):
     profile = Profile.objects.all()
     user = request.user
     if user.is_staff:
-        orders = Order.objects.all()
+        orders = Order.objects.all().order_by('date')
         context = {
             'profile':profile, 
             'orders':orders,
@@ -103,9 +103,9 @@ def UpdateProfilePicture(request):
     form = ProfilePictureForm(request.POST, request.FILES)
     if request.method == 'POST':
         if form.is_valid():
-            picture = form.save(commit=False)
-            picture.user = request.user
-            picture.save()
+            # picture = form.save(commit=False)
+            # picture.user = request.user
+            form.save()
             return redirect('dashboard')
         else:
             messages.error(request, 'Error saving form, please refresh and try again.')
