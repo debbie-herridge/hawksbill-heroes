@@ -14,10 +14,10 @@
         </div>
     </div>
     <div class="row mb-3 pt-3"> 
-        <div class="col-12 col-md-9">
+        <div class="col-12 col-xl-9">
             <img class="card-img-top dashboard" src="{{ turtle.image.url }}" alt="{{ turtle.name }}">
         </div>
-        <div class="col-12 col-md-3">
+        <div class="col-12 col-xl-3">
             <hr>
             <h5 class="pb-0 mb-3"><strong> Weight: </strong></h5>
             <p>{{ turtle.weight }}</p>
@@ -34,8 +34,10 @@
             <a href="{% url 'turtles' %}" class="mt-2 btn btn-dark">Back to turles</a>
             <hr>
             {% if user.is_staff %}
+            <div class="text-end">
                 <a href="{% url 'delete_turtle' turtle.pk %}" class="mt-2 btn btn-dark">Delete turtle</a>
                 <a href="{% url 'update_turtle' turtle.pk %}" class="mt-2 btn btn-dark">Update turtle</a>
+            </div>
             {% endif %}
         </div>
     </div>

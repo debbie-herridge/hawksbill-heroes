@@ -196,3 +196,13 @@ a:hover {
     margin: 0;
     height: 100%;
 }
+
+/* turtles  */
+.card-img-top {
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.turtles {
+    height: 300px;
+}

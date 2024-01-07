@@ -6,13 +6,15 @@
 <div class="container-fluid">
     <div class="row mb-3">
 	{% for turtle in turtles reversed %}
-        <div class="col-sm-6 col-lg-4 h-100 border-0">
-            <a href="{% url 'turtle_details' turtle.id %}">
-                <img class="card-img-top dashboard m-0" src="{{ turtle.image.url }}" alt="{{ turtle.name }}">
-            </a>
+        <div class="col-sm-12 col-lg-4 h-100 border-0">
+            <div class="h-50">
+                <a href="{% url 'turtle_details' turtle.id %}">
+                    <img class="card-img-top dashboard m-0 turtles" src="{{ turtle.image.url }}" alt="{{ turtle.name }}">
+                </a>
+            </div>
             <div>
                 <h3 class="pb-0 mb-0 text-uppercase">{{ turtle.name }}</h3>
-                <p class="pb-0 mb-5 text-center">{{ turtle.description }}</p>
+                <p class="pb-0 mb-5">{{ turtle.description }}</p>
             </div>
         </div>
     {% endfor %} 
