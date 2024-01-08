@@ -11,8 +11,8 @@
                     <thead>
                         <tr>
                             <th scope="col">Product Info</th>
-                            <th scope="col"></th>
-                            <th scope="col">Price</th>
+                            <th scope="col" class="remove-column"></th>
+                            <th scope="col" class="remove-column">Price</th>
                             <th scope="col">Size</th>
                             <th scope="col">Quantity</th>
                             <th scope="col">Subtotal</th>
@@ -21,13 +21,13 @@
                     </thead>
                     {% for item in basket_items %}
                     <tr>
-                        <td>
+                        <td class="remove-column">
                             <img class="img-fluid basket-image" src="{{ item.product.image.url }}">
                         </td>
                         <td>
                             <p><strong>{{ item.product.name }}</strong></p>
                         </td>
-                        <td>
+                        <td class="remove-column">
                             <p><strong>£{{ item.product.price }}</strong></p>
                         </td>
                         <td>
@@ -37,7 +37,7 @@
                             <p><strong>{% if item.size %}{{ item.quantity }}{% else %}{{ item.quantity }}{% endif %}</strong></p>
                         </td>
                         <td>
-                            <p><strong>{{ item.product.price }}</strong></p>
+                            <p><strong>£{{ item.product.price }}</strong></p>
                         </td>
                         <td>
                             <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small>Remove</small></a>
@@ -57,9 +57,9 @@
                         </td>
                     </tr>
                 </table>
-                <div class="mt-5 mb-5 text-end">
-                    <a href="{% url 'merchandise' %}" class="btn btn-dark">Back to Merchandise</a>
-                    <a href="{% url 'checkout' %}" class="btn btn-dark">Secure Checkout</a>
+                <div class="text-end mb-3">
+                    <a href="{% url 'merchandise' %}" class="btn btn-dark m-2">Back to Merchandise</a>
+                    <a href="{% url 'checkout' %}" class="btn btn-dark m-2">Secure Checkout</a>
                 </div>
                 {% else %}
                     <div class="text-center">

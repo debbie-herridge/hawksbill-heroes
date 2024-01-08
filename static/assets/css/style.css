@@ -50,7 +50,7 @@ footer {
     width: 100%;
     background-color: #5F9EA0;
     margin-top: auto;
-    padding: 3rem !important;
+    padding: 3rem 3rem 0 3rem;
 }
 
 /* Footer email address background */
@@ -216,4 +216,11 @@ a:hover {
 
 .turtles {
     height: 300px;
+}
+
+
+@media only screen and (max-width: 900px) {
+    .remove-column{
+        display: none;
+    }
 }

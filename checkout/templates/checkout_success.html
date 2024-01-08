@@ -155,9 +155,14 @@
     </div>
 </div>
 
-
-<div class="text-center">
-    <a href="{% url 'dashboard' %}" class="btn btn-dark m-5">View to my dashboard</a>
-</div>
+{% if user.is_authenticated %}
+    <div class="text-center">
+        <a href="{% url 'dashboard' %}" class="btn btn-dark m-5">View to my dashboard</a>
+    </div>
+{% else %}
+    <div class="text-center">
+        <a href="{% url 'register' %}" class="btn btn-dark m-5">Make an account to view your orders!</a>
+    </div>
+{% endif %}
 
 {%endblock%}
