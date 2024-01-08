@@ -67,12 +67,15 @@ footer {
 }
 
 /* affliated sites */
-
 .affliated-sites {
     object-fit: cover;
     height: 100%;
     width: 100%;
     overflow: hidden;
+}
+
+.affliated-sites:hover {
+    cursor: pointer;
 }
 
 /* Link styling */
@@ -104,31 +107,14 @@ a:hover {
     padding: 10px;
 }
 
-/* Styling for merchandise pages */
-.merchandise-background {
-    background-image: url("/static/assets/images/turtles-swimming.jpg");
-    width: 100vw;
-    margin: 0;
-    height: auto;
+/* turtles  */
+.card-img-top {
     overflow: hidden;
-    background-size:cover;
-    background-position: center;
-}
-
-#product-image {
-    max-height: 60vh;
     object-fit: cover;
 }
 
-.container-account {
-    height: 800px;
-    padding: 3em 6em;
-}
-
-/* Checkout basket */
-.basket-image {
-    max-width: 7em;
-    max-height: 7em;
+.turtles {
+    height: 300px;
 }
 
 /* Background image for user registration/log  */
@@ -178,6 +164,38 @@ a:hover {
     background-position: center;
 }
 
+/* Styling for merchandise pages */
+.merchandise-background {
+    background-image: url("/static/assets/images/turtles-swimming.jpg");
+    width: 100vw;
+    margin: 0;
+    height: auto;
+    overflow: hidden;
+    background-size:cover;
+    background-position: center;
+}
+
+#product-image {
+    max-height: 60vh;
+    object-fit: cover;
+}
+
+.container-account {
+    height: 800px;
+    padding: 3em 6em;
+}
+
+/* Checkout basket */
+.basket-image {
+    max-width: 7em;
+    max-height: 7em;
+}
+
+@media only screen and (max-width: 900px) {
+    .remove-column{
+        display: none;
+    }
+}
 
 /* checkout */
 .stripe-style-input {
@@ -206,21 +224,4 @@ a:hover {
     justify-content: center;
     margin: 0;
     height: 100%;
-}
-
-/* turtles  */
-.card-img-top {
-    overflow: hidden;
-    object-fit: cover;
-}
-
-.turtles {
-    height: 300px;
-}
-
-
-@media only screen and (max-width: 900px) {
-    .remove-column{
-        display: none;
-    }
 }

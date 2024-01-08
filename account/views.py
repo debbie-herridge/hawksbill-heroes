@@ -19,6 +19,9 @@ from .decorators import unauthenticated_user
 
 @unauthenticated_user
 def userLogin(request):
+    """
+    Authenticate and log in user directing to either admin or customer dash
+    """
     if request.method == 'POST':
         form = UserForm(request.POST)
         if form.is_valid():
