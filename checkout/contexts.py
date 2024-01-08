@@ -23,18 +23,6 @@ def basket_contents(request):
                 'quantity':item_data,
                 'product':product,
             })
-        else: 
-            # Updates basket data with items that have size data
-            product = get_object_or_404(Product, pk=item_id)
-            for size, quantity in item_data['items_by_size'].items():
-                total += quantity * product.price
-                product_count += quantity
-                basket_items.append({
-                    'item_id':item_id,
-                    'quantity':quantity,
-                    'product':product,
-                    'size': size,
-                })
     delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
     grand_total = delivery + total
     context = {

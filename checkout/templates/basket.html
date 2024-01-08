@@ -13,7 +13,6 @@
                             <th scope="col">Product Info</th>
                             <th scope="col" class="remove-column"></th>
                             <th scope="col" class="remove-column">Price</th>
-                            <th scope="col">Size</th>
                             <th scope="col">Quantity</th>
                             <th scope="col">Subtotal</th>
                             <th scope="col"></th>
@@ -31,10 +30,7 @@
                             <p><strong>£{{ item.product.price }}</strong></p>
                         </td>
                         <td>
-                            <p><strong>{% if item.product.has_sizes %}{{ item.size }}{% else %}N/A{% endif %}</strong></p>
-                        </td>
-                        <td>
-                            <p><strong>{% if item.size %}{{ item.quantity }}{% else %}{{ item.quantity }}{% endif %}</strong></p>
+                            <p><strong>{{ item.quantity }}</strong></p>
                         </td>
                         <td>
                             <p><strong>£{{ item.product.price }}</strong></p>
