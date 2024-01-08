@@ -86,35 +86,70 @@ Used to make the website logo for the navigation bar and merchandise logo.
 
 ## Testing
 
-## Deployment
+## Installing
 
-Step-by-step guide:
-- Log in to GitHub
-- Locate the repositories and chose one that you want to Deploy
-- Press the "Settings"
-- Scroll down to the GitHub pages section
-- Under "Source" enter the drop down list with the first value of "None" and select "Master branch" instead
-- The page will refresh to be took to the top of the page
-- Scroll down until you get to the "Github pages" section to identify your now deployed link to your website
+### Create the Heroku App
+- Log in to Heroku or create an account.
+- On the main page click the button labelled New in the top right corner and from the drop-down menu select "Create New App".
+- Enter a unique and meaningful app name.
+- Next, select your region.
+- Click on the Create App button.
 
-#### Forking the GitHub Repository
-Forking the repsoitory means we are making a copy of the original version to edit and modify any changes without affecting the original.
+### Attach the Postgres database
+- In the Resources tab, under add-ons, type in Postgres and select the Heroku Postgres option.
+- Copy the DATABASE_URL located in Config Vars in the Settings Tab.
 
-Step-by-step guide:
-- Log in to GitHub and locate the Github Repository
-- At the top of the Repository (not top of the page) just above the "Settings" button on the menu, locate the "Fork" button
-- You should now have a copy of the original Repository in your GitHub Account
+### Prepare the environment and settings.py file
+- In your GitPod workspace, create an env.py file in the main directory.
+- Add the DATABASE_URL value and your chosen SECRET_KEY value to the env.py file.
+- Update the settings.py file to import the env.py file and add the SECRETKEY and DATABASE_URL file paths.
+- Comment out the default database configuration.
+- Save files and make migrations.
+- Add Cloudinary URL to env.py
+- Add the Cloudinary libraries to the list of installed apps.
+- Add the STATIC files settings - the URL, storage path, directory path, root path, media URL and default file storage path.
+- Link the file to the templates directory in Heroku.
+- Change the templates directory to TEMPLATES_DIR
+- Add Heroku to the ALLOWED_HOSTS list in the format ['app_name.heroku.com', 'localhost']
 
-#### Making a Local Clone
-Step-by-step guide:
-- Log in to GitHub and locate the GitHub Repository
-- Under the repository name, click "Clone or download".
-- To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
-- Open Git Bash
-- Change the current working directory to the location where you want the cloned directory to be made.
-- Type git clone, and then paste the URL you copied in Step 3 it should look like: $ git clone https://github.com/debbie-herridge/hawksbill-heroes
-- Press Enter. Your local clone will be created.
+### Create files/directories
+- Create requirements.txt file
+- Create three directories in the main directory; media, storage and templates.
+- Create a file named "Procfile" in the main directory and add the following: web: gunicorn beeinkspired.wsgi
 
+### Update Heroku Config Vars
+Add the following Config Vars in Heroku:
+
+- SECRET_KEY value
+- CLOUDINARY_URL
+- PORT = 8000
+- DISABLE_COLLECTSTATIC = 1
+
+### Deploy
+
+Ensure in Django settings, DEBUG is False
+
+- Go to the deploy tab on Heroku and connect to GitHub, then to the required repository.
+- Scroll to the bottom of the deploy page and either click Enable Automatic Deploys for automatic deploys or Deploy Branch to deploy manually. Manually deployed branches will need re-deploying each time the repo is updated.
+- Click View to view the deployed site.
+
+The site is now live and operational.
+
+## Forking this repository
+
+- Locate the repository at this [link](https://github.com/debbie-herridge/bee-inkspired)
+- At the top of the repository, on the right side of the page, select "Fork" from the buttons available.
+
+A copy of the repository is now created.
+
+## Cloning this repository
+
+- Locate the repository at this [link](https://github.com/debbie-herridge/bee-inkspired)
+- Under 'Code', see the different cloning options, HTTPS, SSH, and GitHub CLI. Click the preferred cloning option, and then copy the link provided.
+Open Terminal.
+- In Terminal, change the current working directory to the desired location of the cloned directory.
+- Type 'git clone', and then paste the URL copied from GitHub earlier.
+- Type 'Enter' to create the local clone.
 
 ## Acknowledgments
 
