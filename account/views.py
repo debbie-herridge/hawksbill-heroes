@@ -1,6 +1,6 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth import logout
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -18,25 +18,21 @@ from checkout.models import Order
 from .decorators import unauthenticated_user
 
 @unauthenticated_user
-def loginPage(request):
-    """
-    Authenticate login details and sign users in.
-    """
+def userLogin(request):
     if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            if request.user.is_staff:
-                return redirect('artist-dashboard')
+        form = UserForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('dashboard')
             else:
-                return redirect('customer-dashboard')
-        else:
-            messages.info(request, 'Username or password is invalid')
-    context = {
-    }
-    return render(request, 'login.html', context)
+                form.add_error(None, 'Invalid credentials')
+    else:
+        form = UserForm()
+    return render(request, 'login.html', {'form': form})
 
 
 @unauthenticated_user

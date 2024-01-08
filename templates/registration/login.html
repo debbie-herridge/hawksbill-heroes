@@ -4,9 +4,6 @@
 <div class="turtle-background">
     <div class="container container-account mx-auto">
         <h1 class="login-header">Welcome back!</h1>
-        {% for message in messages %}
-            <h4>{{message}}</h4>
-        {% endfor %}
         <form class="col-md-12 section-column text-center" method="POST" action="">
             {% csrf_token %}
             <div>
@@ -18,10 +15,14 @@
             <div>
                 <button type="submit" class="btn btn-dark btn-block m-4">Login</button>
             </div>
+            <div class="mb-4">
+                {% for field, error in form.errors.items %}
+                    {% if field != '__all__' %}{{ field }}{% endif %}
+                    {{ error | striptags }}
+                {% endfor %}
+            </div>
             <div>
                 <a href="{% url 'password_reset' %}">Forgot your password?</a>
-            </div>
-            <div> 
             </div>
             <div>
                 <a href="{% url 'register' %}">Don't have have an account?</a>

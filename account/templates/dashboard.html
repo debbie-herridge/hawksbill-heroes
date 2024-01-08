@@ -5,11 +5,7 @@
 <div id="dashboard-background">
     <div class="row mx-auto">
         <div class="col-10 col-sm-3 dashboard-details">
-            {% if user.profile.profile_picture.url is not none %}
-                <img class="profile-picture" src="{{ user.profile.profile_picture.url }}" alt="User profile picture">
-            {% else %}
-                <img class="profile-picture" src="/static/assets/images/default.jpg" alt="Image of default profile picture">
-            {% endif %}
+            <img class="profile-picture" src="{% static 'assets/images/turtle-swimming.jpg' %}" alt="Image of default profile picture">
         </div>
         <div class="col-10 col-sm-7 dashboard-details">
             <div>

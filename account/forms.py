@@ -2,6 +2,10 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm, User
 from django import forms
 from django.forms import ModelForm
 
+class UserLoginForm(forms.Form):
+    username = forms.CharField(max_length=30)
+    password = forms.CharField(widget=forms.PasswordInput)
+
 class CreateUserForm(UserCreationForm):
     """
     Register new user form.
