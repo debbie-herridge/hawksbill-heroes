@@ -12,6 +12,59 @@ View the deployed app [Live website for Hawksbill Heroes](https://hawksbill-hero
 
 ![Image to show the website on different media screens](/static/assets/images/am-i-responsive.jpg)
 
+- [Hawksbill Heroes](#hawksbill-heroes)
+  * [UX](#ux)
+    + [User stories](#user-stories)
+      - [First time users](#first-time-users)
+      - [Returning users](#returning-users)
+    + [Design](#design)
+    + [Wireframes](#wireframes)
+    + [Agile Methodology](#agile-methodology)
+      - [User stories not yet implemented](#user-stories-not-yet-implemented)
+  * [Database](#database)
+    + [Features](#features)
+      - [Current features](#current-features)
+      - [CRUD](#crud)
+      - [Create](#create)
+        * [Users](#users)
+        * [Owners](#owners)
+      - [Read](#read)
+        * [Users](#users-1)
+        * [Owners](#owners-1)
+      - [Update](#update)
+        * [Users](#users-2)
+        * [Owners](#owners-2)
+      - [Delete](#delete)
+        * [Users](#users-3)
+        * [Owners](#owners-3)
+  * [Marketing strategies](#marketing-strategies)
+    + [SEO](#seo)
+      - [Keywords](#keywords)
+      - [External links](#external-links)
+      - [Sitemap and robots.txt](#sitemap-and-robotstxt)
+      - [Email Marketing](#email-marketing)
+  * [Technologies Used](#technologies-used)
+    + [Languages](#languages)
+    + [Frameworks, Libraries & Programs Used](#frameworks--libraries---programs-used)
+  * [Testing](#testing)
+      - [HTML Validator](#html-validator)
+      - [CSS Validator](#css-validator)
+      - [JavaScript](#javascript)
+      - [Pylint](#pylint)
+    + [Bugs](#bugs)
+  * [Installing](#installing)
+    + [Create the Heroku App](#create-the-heroku-app)
+    + [Attach the Postgres database](#attach-the-postgres-database)
+    + [Update Heroku Config Vars](#update-heroku-config-vars)
+    + [Deploy](#deploy)
+  * [Forking this repository](#forking-this-repository)
+  * [Cloning this repository](#cloning-this-repository)
+  * [Acknowledgments](#acknowledgments)
+    + [Content](#content)
+    + [Code](#code)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 ## UX
 
 ### User stories
@@ -225,9 +278,15 @@ Python code was tested using Pylint, installed in the terminal using **pip insta
 
 The overall score was 4.58/10.
 
+#### Media Queries
+
+Google Dev Tools was used to test the sites responsiveness on different media screens. The website was testing for all log in functions and purchasing on phones, tablets and laptops to ensure it kept consistant. On small screens some columns in the checkout pages had to be removed, this was done using CSS to remove the column if the screen was a set size.
+
 ### Bugs 
 
-Several bugs appeared when trying to impliment stripe. This was solved by closely following the CodeInstitute video guides on Boutique Ado. 
+Several bugs appeared when trying to impliment stripe. This was solved by closely following the CodeInstitute video guides on Boutique Ado and with help from the tutor support team. 
+
+As user login was done using custom forms, there was issues to relay back to the user if their details where incorrect for log in. This was solved using form errors rather than Django messages.
 
 ## Installing
 
