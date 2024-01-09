@@ -191,8 +191,6 @@ Used to create the wireframes.
 Used to help debug and style website throughout development.
 - [Favicon](https://favicon.io/)
 Used to create favicon icons.
-- [Pylint](https://pypi.org/project/pylint/)
-Used to analyse python code.
 - [Grammerly](https://www.grammarly.com/service/download)
 Used to check and correct grammer.
 - [MailChimp](https://mailchimp.com/landers/email-marketing-platform/?ds_c=DEPT_AOC_Google_Search_UK_EN_Brand_Acquire_Exact_MKAG_UK&ds_kids=p77184324956&ds_a_lid=kwd-2285511033&ds_cid=71700000112280664&ds_agid=58700008474313140&gad_source=1&gclid=CjwKCAiA-vOsBhAAEiwAIWR0TUfY3feNzMQwqGg5DbYJWv79iRw8EukSsRr8wBOA3l4-OGa16TrqfBoC0_cQAvD_BwE&gclsrc=aw.ds)
@@ -203,8 +201,33 @@ Used to set up email marketing.
 User stories where crucial to testing to make sure each aspect of the website was fit for purpose.
 
 #### HTML Validator
-All HTML pages were run through the [W3C HTML Validator](https://validator.w3.org/). See results in below table.
+All HTML pages were run through the [W3C HTML Validator](https://validator.w3.org/). It passed with warnings.
 
+![HTML Validator](/static/assets/images/hawksbill-heroes-html-validator.jpg)
+
+#### CSS Validator
+
+CSS was tested using [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input). The only issue was a warning as it could not validate part of the MailChimp form. However the rest of the code passed with no errors.
+
+![CSS Validator](/static/assets/images/hawksbill-heroes-css-validator.jpg)
+
+#### JavaScript
+
+Javascript was passed through [JS Hint](https://jshint.com/) with two warnings.
+
+![JSHint](/static/assets/images/hawksbill-heroes-jshint.jpg)
+
+#### Pylint
+
+[![linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/pylint-dev/pylint)
+
+Python code was tested using Pylint, installed in the terminal using **pip install pylint** and ran using the command **pylint $(git ls-files '*.py')**. 
+
+The overall score was 4.58/10.
+
+### Bugs 
+
+Several bugs appeared when trying to impliment stripe. This was solved by closely following the CodeInstitute video guides on Boutique Ado. 
 
 ## Installing
 
@@ -218,38 +241,57 @@ All HTML pages were run through the [W3C HTML Validator](https://validator.w3.or
 ### Attach the Postgres database
 - In the Resources tab, under add-ons, type in Postgres and select the Heroku Postgres option.
 - Copy the DATABASE_URL located in Config Vars in the Settings Tab.
+- Go back to your IDE and install 2 more requirements:
+    - `pip3 install dj_databse_url`
+    - `pip3 install psycopg2-binary` 
+- Create requirements.txt file by typing `pip3 freeze --local > requirements.txt`
+- Add the DATABASE_URL value and your chosen SECRET_KEY value to the env.py file. 
+- In settings.py file import dj_database_url, comment out the default configurations within database settings and add the following: 
 
-### Prepare the environment and settings.py file
-- In your GitPod workspace, create an env.py file in the main directory.
-- Add the DATABASE_URL value and your chosen SECRET_KEY value to the env.py file.
-- Update the settings.py file to import the env.py file and add the SECRETKEY and DATABASE_URL file paths.
-- Comment out the default database configuration.
-- Save files and make migrations.
-- Add Cloudinary URL to env.py
-- Add the Cloudinary libraries to the list of installed apps.
-- Add the STATIC files settings - the URL, storage path, directory path, root path, media URL and default file storage path.
-- Link the file to the templates directory in Heroku.
-- Change the templates directory to TEMPLATES_DIR
-- Add Heroku to the ALLOWED_HOSTS list in the format ['app_name.heroku.com', 'localhost']
+```
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+}
+```
+- Run migrations and create a superuser for the new database. 
+- Create an if statement in settings.py to run the postgres database when using the app on heroku or sqlite if not
 
-### Create files/directories
-- Create requirements.txt file
-- Create three directories in the main directory; media, storage and templates.
-- Create a file named "Procfile" in the main directory and add the following: web: gunicorn beeinkspired.wsgi
+```
+    if 'DATABASE_URL' in os.environ:
+        DATABASES = {
+            'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        }
+    else:
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': BASE_DIR / 'db.sqlite3',
+            }
+    }
+```
+
+- Create requirements.txt file by typing `pip3 freeze --local > requirements.txt`
+- Create a file named "Procfile" in the main directory and add the following: `web: gunicorn project-name.wsgi:application`
+- Add Heroku to the ALLOWED_HOSTS list in settings.py in the format ['app_name.heroku.com', 'localhost']
+
+- Push these changes to Github.
 
 ### Update Heroku Config Vars
 Add the following Config Vars in Heroku:
 
-- SECRET_KEY value
-- CLOUDINARY_URL
-- PORT = 8000
-- DISABLE_COLLECTSTATIC = 1
+|     Variable name     |                           Value/where to find value                           |
+|:---------------------:|:-----------------------------------------------------------------------------:|                     
+| DATABASE_URL          | Postgres generated (as per step above)                                        |
+| EMAIL_HOST_PASS       | Password from email client                                                    |
+| EMAIL_HOST_USER       | Site's email address                                                          |
+| SECRET_KEY            | Random key generated as above                                                 |
+| STRIPE_PUBLIC_KEY     | Stripe Dashboard > Developers tab > API Keys > Publishable key                |
+| STRIPE_SECRET_KEY     | Stripe Dashboard > Developers tab > API Keys > Secret key                     |
+| STRIPE_WH_SECRET      | Stripe Dashboard > Developers tab > Webhooks > site endpoint > Signing secret |                         |
 
 ### Deploy
-
-Ensure in Django settings, DEBUG is False
-
-- Go to the deploy tab on Heroku and connect to GitHub, then to the required repository.
+- NB: Ensure in Django settings, DEBUG is False
+- Go to the deploy tab on Heroku and connect to GitHub, then to the required repository. 
 - Scroll to the bottom of the deploy page and either click Enable Automatic Deploys for automatic deploys or Deploy Branch to deploy manually. Manually deployed branches will need re-deploying each time the repo is updated.
 - Click View to view the deployed site.
 
