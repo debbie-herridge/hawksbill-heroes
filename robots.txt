@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /basket/
+Disallow: /checkout/
+Sitemap: https://hawksbill-heroes-6080a7a722cc.herokuapp.com/sitemap.xml
