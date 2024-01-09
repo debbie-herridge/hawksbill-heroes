@@ -33,6 +33,14 @@ The design is minimilistic with many photos of the turtles to showcase their bea
 
 ![Colour palette chosen for website](/static/assets/images/color-palette.jpg)
 
+### Wireframes
+
+![Homepage Wireframe](/static/assets/images/hawksbill-heroes-wireframe-homepage.jpg)
+![Login Wireframe](/static/assets/images/hawksbill-heroes-wireframe-login.jpg)
+![Turtles Wireframe](/static/assets/images/hawksbill-heroes-wireframe-turtles.jpg)
+![Merchandise Wireframe](/static/assets/images/hawksbill-heroes-wireframe-merchandise.jpg)
+![Checkout Wireframe](/static/assets/images/hawksbill-heroes-wireframe-checkout.jpg)
+
 ### Features
 
 #### Current features
@@ -42,8 +50,16 @@ The site boasts clean consistant styling throughout the site.
 - Donation page
 - Turtle subscription and adoption
 
+#### CRUD
+
+
+
 ## Marketing strategies
 The target market are animal lovers who are environment cautious. As this is a Charity there is a limited marketing budget, as consumers would want their donations to be used on the turtles and not marketing, therefore the charity adopts creative and cost-effective strategies, such as using images of the turtles on social media and community events.
+
+## Database 
+
+![Database schema](/static/assets/images/hawksbill-heroes-dataschema.jpg)
 
 ## Technologies Used
 

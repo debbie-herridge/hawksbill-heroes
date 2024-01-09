@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://hawksbill-heroes-6080a7a722cc.herokuapp.com/</loc>
+  <lastmod>2024-01-09T00:02:43+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://hawksbill-heroes-6080a7a722cc.herokuapp.com/turtles/home/</loc>
+  <lastmod>2024-01-09T00:02:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hawksbill-heroes-6080a7a722cc.herokuapp.com/merchandise/</loc>
+  <lastmod>2024-01-09T00:02:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hawksbill-heroes-6080a7a722cc.herokuapp.com/accounts/login/</loc>
+  <lastmod>2024-01-09T00:02:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hawksbill-heroes-6080a7a722cc.herokuapp.com/checkout/</loc>
+  <lastmod>2024-01-09T00:02:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hawksbill-heroes-6080a7a722cc.herokuapp.com/turtles/31/</loc>
+  <lastmod>2024-01-09T00:02:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://hawksbill-heroes-6080a7a722cc.herokuapp.com/turtles/17/</loc>
+  <lastmod>2024-01-09T00:02:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://hawksbill-heroes-6080a7a722cc.herokuapp.com/turtles/18/</loc>
+  <lastmod>2024-01-09T00:02:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://hawksbill-heroes-6080a7a722cc.herokuapp.com/turtles/19/</loc>
+  <lastmod>2024-01-09T00:02:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://hawksbill-heroes-6080a7a722cc.herokuapp.com/turtles/30/</loc>
+  <lastmod>2024-01-09T00:02:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://hawksbill-heroes-6080a7a722cc.herokuapp.com/turtles/21/</loc>
+  <lastmod>2024-01-09T00:02:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://hawksbill-heroes-6080a7a722cc.herokuapp.com/turtles/22/</loc>
+  <lastmod>2024-01-09T00:02:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://hawksbill-heroes-6080a7a722cc.herokuapp.com/turtles/29/</loc>
+  <lastmod>2024-01-09T00:02:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://hawksbill-heroes-6080a7a722cc.herokuapp.com/turtles/24/</loc>
+  <lastmod>2024-01-09T00:02:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://hawksbill-heroes-6080a7a722cc.herokuapp.com/merchandise/8/</loc>
+  <lastmod>2024-01-09T00:02:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://hawksbill-heroes-6080a7a722cc.herokuapp.com/merchandise/7/</loc>
+  <lastmod>2024-01-09T00:02:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://hawksbill-heroes-6080a7a722cc.herokuapp.com/merchandise/6/</loc>
+  <lastmod>2024-01-09T00:02:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://hawksbill-heroes-6080a7a722cc.herokuapp.com/merchandise/5/</loc>
+  <lastmod>2024-01-09T00:02:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://hawksbill-heroes-6080a7a722cc.herokuapp.com/merchandise/4/</loc>
+  <lastmod>2024-01-09T00:02:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://hawksbill-heroes-6080a7a722cc.herokuapp.com/merchandise/3/</loc>
+  <lastmod>2024-01-09T00:02:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://hawksbill-heroes-6080a7a722cc.herokuapp.com/merchandise/2/</loc>
+  <lastmod>2024-01-09T00:02:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://hawksbill-heroes-6080a7a722cc.herokuapp.com/merchandise/1/</loc>
+  <lastmod>2024-01-09T00:02:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://hawksbill-heroes-6080a7a722cc.herokuapp.com/accounts/password_reset/</loc>
+  <lastmod>2024-01-09T00:02:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://hawksbill-heroes-6080a7a722cc.herokuapp.com/accounts/register/</loc>
+  <lastmod>2024-01-09T00:02:43+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
