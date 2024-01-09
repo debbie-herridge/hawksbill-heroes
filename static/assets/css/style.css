@@ -53,6 +53,27 @@ footer {
     padding: 3rem 3rem 0 3rem;
 }
 
+#mc_embed_signup { 
+    background:#5F9EA0; 
+    false;clear:left; 
+    font-family: 'Sofia Sans', sans-serif;
+    width: 600px;
+}
+
+#mc_embed_signup .helper_text {
+    background:#5F9EA0 !important; 
+}
+
+#mce-EMAIL {
+    background-color: #FFFCF1;
+}
+
+.response {
+    color: #FFFCF1;
+    font-family: 'Sofia Sans', sans-serif;
+    padding: 0 !important;
+}
+
 /* Footer email address background */
 .form-control {
     background-color: transparent;
@@ -225,3 +246,4 @@ a:hover {
     margin: 0;
     height: 100%;
 }
+
