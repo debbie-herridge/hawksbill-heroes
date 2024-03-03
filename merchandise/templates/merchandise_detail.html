@@ -6,7 +6,7 @@
         <div class="col-12 col-md-4">
             <img class="card-img-top dashboard" id="product-image" src="{{ product.image.url }}" alt="{{ product.name }}">
         </div>
-        <div class="col-12 col-md-6 text-center">
+        <div class="col-12 col-md-4 text-center">
             <h1 class="mt-0 text-uppercase">{{ product.name }}</h1>
             <p class="pb-0 mb-5">{{ product.description }}</p>
             <hr>
@@ -33,13 +33,23 @@
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 </div>
             </form>
-            <div class="row text-center">
-                <div class="col-12 col-md-6 offset-md-5">
-                    <a href="{% url 'merchandise' %}" class="btn btn-dark m-3">Keep Shopping</a>
-                    <a href="{% url 'basket' %}" class="btn btn-dark m-3">View basket</a>
-                </div>
-            </div>
         </div>
+    <div class="text-center">
+        <a href="{% url 'merchandise' %}" class="btn btn-dark m-3">Keep Shopping</a>
+        <a href="{% url 'basket' %}" class="btn btn-dark m-3">View basket</a>
+    </div>
+    <div class="container">
+        <h2 class="mt-2 text-uppercase">Reviews:</h2>
+        {% for review in reviews %}
+        <div class="row text-center">
+            <div class="col mb-3">
+                <p><strong>{{ review.customer }}:</strong></p>
+                <p><strong class="fs-4">{{ review.rating }}</strong></p>
+                <p>{{ review.review }}</p>
+            </div>
+            <hr>
+        </div>
+        {% endfor %}
     </div>
 </div>
 

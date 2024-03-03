@@ -9,7 +9,7 @@ from django.views import generic
 from django.views.generic import View
 
 from django.urls import reverse_lazy
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import Group
 
 from .forms import *
@@ -84,9 +84,9 @@ def dashboard(request):
     """
     user = request.user
     if user.is_staff:
-        orders = Order.objects.all().order_by('date')
+        order = Order.objects.all().order_by('date')
         context = {
-            'orders':orders,
+            'order':order,
         }
         return render(request, 'dashboard-admin.html', context)
     else:
@@ -95,6 +95,27 @@ def dashboard(request):
             'orders':orders,
         }
         return render(request, 'dashboard.html', context)
+
+def dashboardOrder(request, pk):
+    """
+    Allows users to view details of their order.
+    """
+    order = get_object_or_404(Order, pk=pk)
+    if request.method == 'POST':
+        form = UserReview(request.POST)
+        order = get_object_or_404(Order, pk=pk)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.customer = request.user
+            review.save()
+            return redirect('dashboard')
+    else:
+        form = UserReview()
+    context = {
+        'order':order,
+        'form':form,
+    }
+    return render(request, 'dashboard-order.html', context)
 
 class UserDeleteView(LoginRequiredMixin, View):
     """
