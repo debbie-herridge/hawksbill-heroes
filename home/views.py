@@ -5,6 +5,9 @@ from django.http import JsonResponse
 def home(request):
     return render(request, 'index.html')
 
+def donate(request):
+    return render(request, 'donate.html')
+
 def charge(request):
     amount = 5
     if request.method == 'POST':

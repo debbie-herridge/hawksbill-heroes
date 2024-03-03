@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container text-center">
+    <img src="{% static 'assets/images/page-not-found.jpg' %}" alt="Custom 404 error image containing logo" class="w-100 p-3">
+    <a class="btn btn-dark mb-5" href="{% url 'home' %}">Go back to the homepage</a>
+</div>
+
+{% endblock %}
