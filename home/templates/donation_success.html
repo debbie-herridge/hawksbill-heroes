@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container text-center">
     <h1>Thank you for your donation of £{{amount}}!</h1>
     <p> 
         Your support means the world to us and makes a significant difference to saving the Hawksbill Turtles.
@@ -12,9 +12,9 @@
         Once again, thank you for your selflessness and commitment to making the world a better place. 
         We couldn't do it without you.
     </p>
+    <br>
     <hr>
-    <a class="btn btn-dark" href="{% url 'merchandise' %}">Go view our Merchandise!</a>
-    <a class="btn btn-dark" href="{% url 'turtles' %}">See our turtles!</a>
+    <a class="btn btn-dark" href="{% url 'dashboard' %}">Go to my dashboard!</a>
 </div>
 
 {% endblock %}
