@@ -14,6 +14,7 @@ from django.contrib.auth.models import Group
 
 from .forms import *
 from .models import *
+from home.models import Donation
 from checkout.models import Order
 from .decorators import unauthenticated_user
 
@@ -91,14 +92,16 @@ def dashboard(request):
         return render(request, 'dashboard-admin.html', context)
     else:
         orders = Order.objects.filter(email=request.user.email)
+        donation = Donation.objects.filter(customer=request.user)
         context = { 
             'orders':orders,
+            'donation':donation,
         }
         return render(request, 'dashboard.html', context)
 
 def dashboardOrder(request, pk):
     """
-    Allows users to view details of their order.
+    Allows users to view details of their order and leave reviews.
     """
     order = get_object_or_404(Order, pk=pk)
     if request.method == 'POST':

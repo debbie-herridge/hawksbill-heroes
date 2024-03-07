@@ -5,6 +5,7 @@ from django.conf import settings
 from django.http import JsonResponse
 
 import stripe
+from .forms import *
 
 def home(request):
     return render(request, 'index.html')
@@ -19,17 +20,22 @@ def charge(request):
     stripe.api_key = settings.STRIPE_SECRET_KEY
 
     if request.method == 'POST':
-        
+        form = UserDonation(request.POST)
         amount = int(request.POST['amount'])
-        customer = stripe.Customer.create(
-            source=request.POST['stripeToken']
-            )
-        charge = stripe.Charge.create(
-            customer=customer,
-            amount=amount*100,
-            currency='gbp',
-            description="Donation"
-            )
+        if form.is_valid():
+            customer = stripe.Customer.create(
+                source=request.POST['stripeToken']
+                )
+            charge = stripe.Charge.create(
+                customer=customer,
+                amount=amount*100,
+                currency='gbp',
+                description="Donation"
+                )
+            donate = form.save(commit=False)
+            donate.customer = request.user
+            donate.amount = amount
+            donate.save()
     return redirect(reverse('success', args=[amount]))
 
 @login_required
