@@ -92,10 +92,14 @@ def dashboard(request):
         return render(request, 'dashboard-admin.html', context)
     else:
         orders = Order.objects.filter(email=request.user.email)
-        donation = Donation.objects.filter(customer=request.user)
+        donations = Donation.objects.filter(customer=request.user)
+        total = 0
+        for donation in donations:
+            total += donation.amount
+
         context = { 
             'orders':orders,
-            'donation':donation,
+            'total':total,
         }
         return render(request, 'dashboard.html', context)
 

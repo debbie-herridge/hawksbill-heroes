@@ -21,8 +21,8 @@
                 <h5><strong>Helping the turtles since:</strong> {{request.user.date_joined }}</h5>
                 <hr>
                 <h5><strong>Total donations:</strong> 
-                    {% if donation %}
-                        <p>{{ donation.amount }}</p>
+                    {% if total %}
+                        £{{ total }}
                     {% else %}
                         <a href="{% url 'donate' %}" class="btn btn-dark text-uppercase m-2">Make a donation</a>
                         <a href="{% url 'merchandise' %}" class="btn btn-dark text-uppercase m-2">Buy Merchandise</a>
