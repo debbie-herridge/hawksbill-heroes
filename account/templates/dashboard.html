@@ -38,18 +38,14 @@
             {% for order in orders %}
             <div class="row text-center">
                 <div class="col">
+                    <p><strong>Date Placed: </strong>{{ order.date }}</p>
+                </div>
+                <div class="col">
                     <p><strong>Order Number: </strong>{{ order.order_number }}</p>
                 </div>
                 <div class="col">
-                    <p><strong>Date Placed: </strong>{{ order.date }}</p>
+                    <a class='btn btn-dark' href="{% url 'dashboard_order' order.pk %}">View order and leave a review!</a>
                 </div>
-                {% if order.review %}
-                    <p><strong>Thank you for your review!</strong></p>
-                {% else %}
-                    <div class="col">
-                        <a class='btn btn-dark' href="{% url 'dashboard_order' order.pk %}">View order and leave a review!</a>
-                    </div>
-                {% endif %}
             </div>
             <hr>
             {% endfor %}

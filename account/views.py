@@ -85,9 +85,9 @@ def dashboard(request):
     """
     user = request.user
     if user.is_staff:
-        order = Order.objects.all().order_by('date')
+        orders = Order.objects.all().order_by('-date')
         context = {
-            'order':order,
+            'orders':orders,
         }
         return render(request, 'dashboard-admin.html', context)
     else:

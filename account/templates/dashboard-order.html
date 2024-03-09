@@ -40,12 +40,15 @@
                         {{ item.quantity }} x £{{ item.product.price }} each
                     </p>
                 </div>
-            <div class="col-6">
-                <p class="mb-0 text-end">
-                    <a href="{% url 'review' item.id %}" class="btn btn-dark text-uppercase m-2">Leave a review for the product!</a>
-                </p>
-            </div>
+            {% if user.is_staff %}
+            {% else %}
+                <div class="col-6">
+                    <p class="mb-0 text-end">
+                        <a href="{% url 'review' item.id %}" class="btn btn-dark text-uppercase m-2">Leave a review for the product!</a>
+                    </p>
+                </div>
                 <hr>
+            {% endif %}
             </div>
             {% endfor %}
             <div class="row mt-2">
@@ -151,6 +154,10 @@
                 <div class="col-12 col-md-8 text-md-right">
                     <p class="mb-0 text-end">£{{ order.grand_total }}</p>
                 </div>
+            </div>
+            <div class="row">
+                <hr>
+                <a class='btn btn-dark' href="{% url 'dashboard' %}">Back to dashboard</a>
             </div>
         </div>
     </div>
