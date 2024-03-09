@@ -76,11 +76,14 @@ For first time users the goal of the site is to:
 - Learn what the charity is doing to help.
 - Be able to contribute to the cause.
 - Purchase merchandise to help.
+- Donate to the cause.
 
 #### Returning users
 Returning users are able to log in and:
 - See previous orders.
 - Make new orders with ease.
+- View total donations on their dashboard.
+- Review the products.
 
 ### Design
 The design is minimilistic with many photos of the turtles to showcase their beauty. The colour scheme is colour picked from the images, with the header and footer being a green/blue tone to match the water and the soft beige background body matching the turtles body. It represents the clear shallow waters of Hawaii and envokes a calming reaction from the user.
@@ -101,10 +104,9 @@ Using Github projects user stories where created using an issues template, then 
 
 #### User stories not yet implemented
 
-- Donate to organisation
 - Adopt a turtle
 
-As the website grows, users will be able to adopt a turtle for a set amount of time or simply donate to the cause. These are labelled as "Won't Have" as a user story issue, but they are intented to be added at a later date.
+As the website grows, users will be able to adopt a turtle for a set amount of time. These are labelled as "Won't Have" as a user story issue, but they are intented to be added at a later date.
 
 ## Database 
 
@@ -124,7 +126,10 @@ The site boasts clean consistant styling throughout the site. The same template 
 
 ##### Users
 
-Users can register to create new accounts.
+- Users can register to create new accounts.
+- Create reviews for the products they have purchased.
+- Create new orders.
+- Can make new donation payments.
 
 ##### Owners
 
@@ -134,19 +139,19 @@ When owners are logged in they can add new turtles on the main page using a form
 
 ##### Users
 
- - Users can view their previous orders in their dashboard
- - View their current personal details their dashboard
+ - Users can view their previous orders in their dashboard and leave reviews.
+ - View their current personal details their dashboard including their total donation payments.
  - Users can view all the turtles on the database in the turtles homepage.
 
 ##### Owners
 
-Owners can view all previous orders in their dashboard
+Owners can view all previous orders in their dashboard.
 
 #### Update
 
 ##### Users
 
-Users can update their personal details either by their dashboard or the drop down navigation bar
+Users can update their personal details either by their dashboard or the drop down navigation bar.
 
 ##### Owners 
 

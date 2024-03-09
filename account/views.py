@@ -114,6 +114,7 @@ def dashboardOrder(request, pk):
         if form.is_valid():
             review = form.save(commit=False)
             review.customer = request.user
+            review.product = request.item.product.name
             review.save()
             return redirect('dashboard')
     else:
