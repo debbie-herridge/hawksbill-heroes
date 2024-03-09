@@ -4,7 +4,7 @@ from django.conf import settings
 from django.contrib.auth.models import User
 
 from django.db import models
-from merchandise.models import Product
+from merchandise.models import Product, Review
 
 class Order(models.Model):
     """
