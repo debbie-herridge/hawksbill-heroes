@@ -53,13 +53,6 @@ footer {
     padding: 3rem 3rem 0 3rem;
 }
 
-#mc_embed_signup { 
-    background:#5F9EA0; 
-    false;clear:left; 
-    font-family: 'Sofia Sans', sans-serif;
-    width: 600px;
-}
-
 #mc_embed_signup .helper_text {
     background:#5F9EA0 !important; 
 }
@@ -69,7 +62,7 @@ footer {
 }
 
 .response {
-    color: #FFFCF1;
+    color: #FFFCF1 !important;
     font-family: 'Sofia Sans', sans-serif;
     padding: 0 !important;
 }
@@ -190,12 +183,9 @@ a:hover {
 }
 
 /* stying for review form */
-#id_review {
-    width: 100% !important;
-}
-
-#id_rating {
-    background-color: transparent;
+#donation {
+    border: solid;
+    padding: 5%;
 }
 
 /* Styling for merchandise pages */

@@ -40,11 +40,11 @@
                         {{ item.quantity }} x £{{ item.product.price }} each
                     </p>
                 </div>
-                <div class="col-6">
-                    <p class="mb-0 text-end">
-                        <a href="{% url 'review' item.id %}" class="btn btn-dark text-uppercase m-2">Leave a review for the product!</a>
-                    </p>
-                </div>
+            <div class="col-6">
+                <p class="mb-0 text-end">
+                    <a href="{% url 'review' item.id %}" class="btn btn-dark text-uppercase m-2">Leave a review for the product!</a>
+                </p>
+            </div>
                 <hr>
             </div>
             {% endfor %}

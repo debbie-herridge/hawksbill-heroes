@@ -3,33 +3,35 @@
 
 {% block content %}
 
-<div class="container mt-5 mb-3 text-center">
-    <form action="{% url 'charge' %}" method="post" id="payment-form">
-        {% csrf_token %}
-        <div class="form-field-12">
-            <label for="amount">Choose Amount:</label>
-            <select required name="amount" id="amount">
-              <option selected value="5">£5</option>
-              <option value="10">£10</option>
-              <option value="25">£25</option>
-            </select>
-        </div>
-    <br>
-      <div class="form-row">
-        <label for="card-element">
-          Credit or debit card
-        </label>
-        <div id="card-element">
-          <!-- A Stripe Element will be inserted here. -->
-        </div>
-
-        <!-- Used to display form errors. -->
-        <div id="card-errors" role="alert"></div>
-      </div>
-      <hr>
-      <br>
-         <input  class="btn btn-dark" type="submit" value="Submit Payment" name="">
-    </form>
+<div class="container mt-5">
+    <div class="container mb-3 text-center" id="donation">
+        <form action="{% url 'charge' %}" method="post" id="payment-form">
+            {% csrf_token %}
+            <div class="form-field-12">
+                <label for="amount">Choose Amount:</label>
+                <select required name="amount" id="amount">
+                  <option selected value="5">£5</option>
+                  <option value="10">£10</option>
+                  <option value="25">£25</option>
+                </select>
+            </div>
+        <br>
+          <div class="form-row">
+            <label for="card-element">
+              Credit or debit card
+            </label>
+            <div id="card-element">
+              <!-- A Stripe Element will be inserted here. -->
+            </div>
+    
+            <!-- Used to display form errors. -->
+            <div id="card-errors" role="alert"></div>
+          </div>
+          <hr>
+          <br>
+             <input  class="btn btn-dark" type="submit" value="Submit Payment" name="">
+        </form>
+    </div>
 </div>
 
 
