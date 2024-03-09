@@ -13,4 +13,8 @@ urlpatterns = [
 
     path('dashboard/', views.dashboard, name='dashboard'),
     path('dashboard_order/<pk>/', views.dashboardOrder, name='dashboard_order'),
+
+    path('product_review/success/', views.reviewSucess, name='review_sucess'),
+    path('product_review/<review_id>/', views.productReview, name='review'),
+    
 ]

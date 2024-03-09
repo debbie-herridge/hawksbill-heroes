@@ -15,7 +15,7 @@ from django.contrib.auth.models import Group
 from .forms import *
 from .models import *
 from home.models import Donation
-from checkout.models import Order
+from checkout.models import Order, OrderLineItem
 from .decorators import unauthenticated_user
 
 @unauthenticated_user
@@ -105,25 +105,40 @@ def dashboard(request):
 
 def dashboardOrder(request, pk):
     """
-    Allows users to view details of their order and leave reviews.
+    Allows users to view details of their order.
     """
     order = get_object_or_404(Order, pk=pk)
+    context = {
+        'order':order,
+    }
+    return render(request, 'dashboard-order.html', context)
+
+def productReview(request, review_id):
+    """
+    Allows users to leave review of product.
+    """
+    product = get_object_or_404(OrderLineItem, pk=review_id)
     if request.method == 'POST':
         form = UserReview(request.POST)
-        order = get_object_or_404(Order, pk=pk)
         if form.is_valid():
             review = form.save(commit=False)
             review.customer = request.user
-            review.product = request.item.product.name
+            review.product = product.product
             review.save()
-            return redirect('dashboard')
+            return redirect('review_sucess')
     else:
         form = UserReview()
-    context = {
-        'order':order,
+    context={
+	    'product':product,
         'form':form,
     }
-    return render(request, 'dashboard-order.html', context)
+    return render(request, 'review.html', context)
+
+def reviewSucess(request):
+    """
+    Simple view to log out user.
+    """
+    return render(request, 'review_sucess.html')
 
 class UserDeleteView(LoginRequiredMixin, View):
     """

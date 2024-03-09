@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container mt-4 mb-5 text-center">
+    <h1>Thank you for your review!</h1>
+    <p>Your feedback is appreciated and has been added to the product page</p>
+    <br>
+    <i class="fa-solid fa-face-smile fa-bounce fa-2xl" style="color: #FFD43B;"></i>
+    <div class="mt-5">
+        <a href="{% url 'dashboard' %}" class="btn btn-dark text-uppercase m-2">Back to dashboard</a>
+    </div>
+</div>
+
+{% endblock %}

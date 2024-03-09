@@ -11,7 +11,7 @@ def merchandise(request):
 
 def merchandise_details(request, merchandise_id):
     product = get_object_or_404(Product, pk=merchandise_id)
-    reviews = Review.objects.all()
+    reviews = Review.objects.filter(product= product)
     context={
 	    'product':product,
         'reviews':reviews,

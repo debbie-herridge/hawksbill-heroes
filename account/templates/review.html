@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container mt-4 mb-5">
+    <h1>Please leave a review! </h1>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <div class="row ps-5 mb-4 text-center">
+            <table>
+                <tr>
+                    <th><strong>Product:</strong></th>
+                    <th><strong>Rating out of 5:</strong></th> 
+                    <th><strong>Please leave a comment for the product:</strong></th>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>{{product.product}}</td>
+                    <td>{{form.rating}}</td>
+                    <td>{{form.review}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-dark btn-block m-4">Submit</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

@@ -189,6 +189,15 @@ a:hover {
     background-position: center;
 }
 
+/* stying for review form */
+#id_review {
+    width: 100% !important;
+}
+
+#id_rating {
+    background-color: transparent;
+}
+
 /* Styling for merchandise pages */
 .merchandise-background {
     background-image: url("https://res.cloudinary.com/dnibqmdkj/image/upload/v1699106351/static/assets/images/turtles-swimming.c33905e119b2.jpg");
